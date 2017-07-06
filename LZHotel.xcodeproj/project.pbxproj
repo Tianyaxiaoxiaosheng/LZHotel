@@ -1,0 +1,496 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F047DB1A1F0DC7810010EF44 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F047DB191F0DC7810010EF44 /* main.m */; };
+		F047DB1D1F0DC7810010EF44 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F047DB1C1F0DC7810010EF44 /* AppDelegate.m */; };
+		F047DB201F0DC7810010EF44 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F047DB1F1F0DC7810010EF44 /* ViewController.m */; };
+		F047DB231F0DC7810010EF44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F047DB211F0DC7810010EF44 /* Main.storyboard */; };
+		F047DB251F0DC7810010EF44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F047DB241F0DC7810010EF44 /* Assets.xcassets */; };
+		F047DB281F0DC7810010EF44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F047DB261F0DC7810010EF44 /* LaunchScreen.storyboard */; };
+		F047DB3C1F0DCDCA0010EF44 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F047DB331F0DCDCA0010EF44 /* AsyncUdpSocket.m */; };
+		F047DB3F1F0DCF660010EF44 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F047DB411F0DCF660010EF44 /* InfoPlist.strings */; };
+		F047DB441F0DD0770010EF44 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F047DB431F0DD0770010EF44 /* Settings.bundle */; };
+		F0D0E5FC8D0C97F63149B7F1 /* libPods-LZHotel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B95DE1329294487AC66B2DD9 /* libPods-LZHotel.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2A3D3475AC0717C31EF37E0B /* Pods-LZHotel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZHotel.release.xcconfig"; path = "Pods/Target Support Files/Pods-LZHotel/Pods-LZHotel.release.xcconfig"; sourceTree = "<group>"; };
+		2FFE69B8611212CDD5290638 /* Pods-LZHotel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZHotel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LZHotel/Pods-LZHotel.debug.xcconfig"; sourceTree = "<group>"; };
+		B95DE1329294487AC66B2DD9 /* libPods-LZHotel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LZHotel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F047DB151F0DC7810010EF44 /* LZHotel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZHotel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F047DB191F0DC7810010EF44 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F047DB1B1F0DC7810010EF44 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F047DB1C1F0DC7810010EF44 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F047DB1E1F0DC7810010EF44 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F047DB1F1F0DC7810010EF44 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F047DB221F0DC7810010EF44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F047DB241F0DC7810010EF44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F047DB271F0DC7810010EF44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F047DB291F0DC7810010EF44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F047DB321F0DCDCA0010EF44 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		F047DB331F0DCDCA0010EF44 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		F047DB401F0DCF660010EF44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F047DB421F0DCF870010EF44 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		F047DB431F0DD0770010EF44 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F047DB121F0DC7810010EF44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0D0E5FC8D0C97F63149B7F1 /* libPods-LZHotel.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9426056B88403DB872113BEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B95DE1329294487AC66B2DD9 /* libPods-LZHotel.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F047DB0C1F0DC7810010EF44 = {
+			isa = PBXGroup;
+			children = (
+				F047DB431F0DD0770010EF44 /* Settings.bundle */,
+				F047DB411F0DCF660010EF44 /* InfoPlist.strings */,
+				F047DB171F0DC7810010EF44 /* LZHotel */,
+				F047DB161F0DC7810010EF44 /* Products */,
+				FE70B54194F843FFCF91C5FC /* Pods */,
+				9426056B88403DB872113BEA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F047DB161F0DC7810010EF44 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F047DB151F0DC7810010EF44 /* LZHotel.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F047DB171F0DC7810010EF44 /* LZHotel */ = {
+			isa = PBXGroup;
+			children = (
+				F047DB391F0DCDCA0010EF44 /* DYPch */,
+				F047DB371F0DCDCA0010EF44 /* DYManager */,
+				F047DB361F0DCDCA0010EF44 /* DYMain */,
+				F047DB341F0DCDCA0010EF44 /* DYAircon */,
+				F047DB351F0DCDCA0010EF44 /* DYLights */,
+				F047DB3A1F0DCDCA0010EF44 /* DYService */,
+				F047DB3B1F0DCDCA0010EF44 /* DYSetter */,
+				F047DB311F0DCDCA0010EF44 /* AsyncUdpSocket */,
+				F047DB381F0DCDCA0010EF44 /* DYOthers */,
+				F047DB1B1F0DC7810010EF44 /* AppDelegate.h */,
+				F047DB1C1F0DC7810010EF44 /* AppDelegate.m */,
+				F047DB1E1F0DC7810010EF44 /* ViewController.h */,
+				F047DB1F1F0DC7810010EF44 /* ViewController.m */,
+				F047DB211F0DC7810010EF44 /* Main.storyboard */,
+				F047DB241F0DC7810010EF44 /* Assets.xcassets */,
+				F047DB261F0DC7810010EF44 /* LaunchScreen.storyboard */,
+				F047DB291F0DC7810010EF44 /* Info.plist */,
+				F047DB181F0DC7810010EF44 /* Supporting Files */,
+			);
+			path = LZHotel;
+			sourceTree = "<group>";
+		};
+		F047DB181F0DC7810010EF44 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F047DB191F0DC7810010EF44 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F047DB311F0DCDCA0010EF44 /* AsyncUdpSocket */ = {
+			isa = PBXGroup;
+			children = (
+				F047DB321F0DCDCA0010EF44 /* AsyncUdpSocket.h */,
+				F047DB331F0DCDCA0010EF44 /* AsyncUdpSocket.m */,
+			);
+			path = AsyncUdpSocket;
+			sourceTree = "<group>";
+		};
+		F047DB341F0DCDCA0010EF44 /* DYAircon */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DYAircon;
+			sourceTree = "<group>";
+		};
+		F047DB351F0DCDCA0010EF44 /* DYLights */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DYLights;
+			sourceTree = "<group>";
+		};
+		F047DB361F0DCDCA0010EF44 /* DYMain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DYMain;
+			sourceTree = "<group>";
+		};
+		F047DB371F0DCDCA0010EF44 /* DYManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DYManager;
+			sourceTree = "<group>";
+		};
+		F047DB381F0DCDCA0010EF44 /* DYOthers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DYOthers;
+			sourceTree = "<group>";
+		};
+		F047DB391F0DCDCA0010EF44 /* DYPch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DYPch;
+			sourceTree = "<group>";
+		};
+		F047DB3A1F0DCDCA0010EF44 /* DYService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DYService;
+			sourceTree = "<group>";
+		};
+		F047DB3B1F0DCDCA0010EF44 /* DYSetter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DYSetter;
+			sourceTree = "<group>";
+		};
+		FE70B54194F843FFCF91C5FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2FFE69B8611212CDD5290638 /* Pods-LZHotel.debug.xcconfig */,
+				2A3D3475AC0717C31EF37E0B /* Pods-LZHotel.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F047DB141F0DC7810010EF44 /* LZHotel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F047DB2C1F0DC7810010EF44 /* Build configuration list for PBXNativeTarget "LZHotel" */;
+			buildPhases = (
+				F60F493391D1DF921FA2B38C /* [CP] Check Pods Manifest.lock */,
+				F047DB111F0DC7810010EF44 /* Sources */,
+				F047DB121F0DC7810010EF44 /* Frameworks */,
+				F047DB131F0DC7810010EF44 /* Resources */,
+				CF5AA213DA9E41E5043A1099 /* [CP] Embed Pods Frameworks */,
+				48256AE3824BC9EF2B578D6B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LZHotel;
+			productName = LZHotel;
+			productReference = F047DB151F0DC7810010EF44 /* LZHotel.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F047DB0D1F0DC7810010EF44 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = yavatop;
+				TargetAttributes = {
+					F047DB141F0DC7810010EF44 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = E47JKL8BW9;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F047DB101F0DC7810010EF44 /* Build configuration list for PBXProject "LZHotel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = F047DB0C1F0DC7810010EF44;
+			productRefGroup = F047DB161F0DC7810010EF44 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F047DB141F0DC7810010EF44 /* LZHotel */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F047DB131F0DC7810010EF44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F047DB281F0DC7810010EF44 /* LaunchScreen.storyboard in Resources */,
+				F047DB3F1F0DCF660010EF44 /* InfoPlist.strings in Resources */,
+				F047DB441F0DD0770010EF44 /* Settings.bundle in Resources */,
+				F047DB251F0DC7810010EF44 /* Assets.xcassets in Resources */,
+				F047DB231F0DC7810010EF44 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		48256AE3824BC9EF2B578D6B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LZHotel/Pods-LZHotel-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF5AA213DA9E41E5043A1099 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LZHotel/Pods-LZHotel-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F60F493391D1DF921FA2B38C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F047DB111F0DC7810010EF44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F047DB201F0DC7810010EF44 /* ViewController.m in Sources */,
+				F047DB1D1F0DC7810010EF44 /* AppDelegate.m in Sources */,
+				F047DB1A1F0DC7810010EF44 /* main.m in Sources */,
+				F047DB3C1F0DCDCA0010EF44 /* AsyncUdpSocket.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F047DB211F0DC7810010EF44 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F047DB221F0DC7810010EF44 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F047DB261F0DC7810010EF44 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F047DB271F0DC7810010EF44 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F047DB411F0DCF660010EF44 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F047DB401F0DCF660010EF44 /* en */,
+				F047DB421F0DCF870010EF44 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F047DB2A1F0DC7810010EF44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F047DB2B1F0DC7810010EF44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F047DB2D1F0DC7810010EF44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FFE69B8611212CDD5290638 /* Pods-LZHotel.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E47JKL8BW9;
+				INFOPLIST_FILE = LZHotel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yavatop.LZHotel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F047DB2E1F0DC7810010EF44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A3D3475AC0717C31EF37E0B /* Pods-LZHotel.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E47JKL8BW9;
+				INFOPLIST_FILE = LZHotel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yavatop.LZHotel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F047DB101F0DC7810010EF44 /* Build configuration list for PBXProject "LZHotel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F047DB2A1F0DC7810010EF44 /* Debug */,
+				F047DB2B1F0DC7810010EF44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F047DB2C1F0DC7810010EF44 /* Build configuration list for PBXNativeTarget "LZHotel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F047DB2D1F0DC7810010EF44 /* Debug */,
+				F047DB2E1F0DC7810010EF44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F047DB0D1F0DC7810010EF44 /* Project object */;
+}
