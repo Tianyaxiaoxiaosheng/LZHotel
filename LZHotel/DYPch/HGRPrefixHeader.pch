@@ -1,0 +1,138 @@
+//
+//  HGRPrefixHeader.pch
+//  LZHGRControl
+//
+//  Created by Jony on 17/4/1.
+//  Copyright © 2017年 yavatop. All rights reserved.
+//
+
+#ifndef HGRPrefixHeader_pch
+#define HGRPrefixHeader_pch
+
+#pragma mark -difinition class
+// 包含时要注意顺序
+//Main Controller
+#import "MainViewController.h"
+//#import "EquipmentInfo.h"
+#import "WDYButton.h"
+#import "WDYTabbar.h"
+#import "TitleBarView.h"
+
+#import "WDYViewController.h"
+#import "LightsViewController.h"
+#import "AirconViewController.h"
+#import "ServiceViewController.h"
+#import "SettingViewController.h"
+//
+//#import "OverAllControlView.h"
+//#import "LTNavigationBarView.h"
+//#import "BedroomLTView.h"
+//#import "MainLampLTView.h"
+//#import "ToletLTView.h"
+//#import "CloakroomLTView.h"
+//#import "GuestBathroomLTView.h"
+//
+#import "Aircon.h"
+#import "ACNavigationButton.h"
+#import "ACNavigationView.h"
+#import "AirconKeyboardView.h"
+//
+//#import "ServerKeyboardView.h"
+//
+//#import "SetKeyboardView.h"
+//
+//#import "NetworkInfo.h"
+//#import "UDPNetwork.h"
+//#import "EPCore.h"
+//#import "WebConnect.h"
+//#import "StringTools.h"
+
+//get local ip
+#import <ifaddrs.h>
+#import <arpa/inet.h>
+//socket
+#import <sys/socket.h>
+#import <netinet/in.h>
+#import <arpa/inet.h>
+#import <unistd.h>
+//Udp
+#import "AsyncUdpSocket.h"
+
+//SVProgressHUD
+#import "SVProgressHUD.h"
+
+//string
+#include <stdio.h>
+#include <string.h>
+
+
+
+#pragma mark -View Info
+
+//MainScreen Height Width
+#define MAIN_SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width //主屏幕宽度
+#define MAIN_SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height //主屏幕高度
+#define MAIN_VIEW_BACKGROUND [UIColor colorWithPatternImage:[UIImage imageNamed:@"main_bk.jpg"]]
+
+//TitleBarView info
+#define TITLEBAR_VIEW_INIT_X (0.0f)
+#define TITLEBAR_VIEW_INIT_Y (0.0f)
+#define TITLEBAR_VIEW_WIDTH MAIN_SCREEN_WIDTH
+#define TITLEBAR_VIEW_HEIGHT (160.0f)
+
+//server view info
+#define SERVER_VIEW_INIT_X (150.0f)
+#define SERVER_VIEW_INIT_Y (200.0f)
+#define SERVER_VIEW_WIDTH  (724.0f)
+#define SERVER_VIEW_HEIGHT (400.0f)
+
+//set view info
+#define SET_VIEW_INIT_X (150.0f)
+#define SET_VIEW_INIT_Y (200.0f)
+#define SET_VIEW_WIDTH  (724.0f)
+#define SET_VIEW_HEIGHT (400.0f)
+
+//aircon view info
+#define AIRCON_VIEW_INIT_X (100.0f)
+#define AIRCON_VIEW_INIT_Y (180.0f)
+#define AIRCON_VIEW_WIDTH  (824.0f)
+#define AIRCON_VIEW_HEIGHT (420.0f)
+//aircon keyboard view info  //相对于导航界面
+#define ACKB_VIEW_INIT_X (100.0f)
+#define ACKB_VIEW_INIT_Y (260.0f)
+#define ACKB_VIEW_WIDTH  (824.0f)
+#define ACKB_VIEW_HEIGHT (340.0f)
+
+//Lights
+//Over All Control View Info
+#define OAC_VIEW_INIT_X (50.0f)
+#define OAC_VIEW_INIT_Y (190.0f)
+#define OAC_VIEW_WIDTH  (224.0f)
+#define OAC_VIEW_HEIGHT (450.0f)
+//Navigation bar  and keyboard background View Info
+#define NB_VIEW_INIT_X (294.0f)
+#define NB_VIEW_INIT_Y (190.0f)
+#define NB_VIEW_WIDTH  (700.0f)
+#define NB_VIEW_HEIGHT (450.0f)
+//Light keyboard view info //相对于导航界面
+#define LKB_VIEW_INIT_X (0.0f)
+#define LKB_VIEW_INIT_Y (60.0f)
+#define LKB_VIEW_WIDTH  (700.0f)
+#define LKB_VIEW_HEIGHT (390.0f)
+
+
+
+//Everyone View background image path
+//主背景
+//导航栏背景
+//工具栏背景
+
+//NavigationBar&ToolBar Buttton background image path
+//导航栏按钮背景
+//工具栏按钮背景
+
+
+
+
+
+#endif /* HGRPrefixHeader_pch */
