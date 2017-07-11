@@ -14,7 +14,7 @@
 //Main Controller
 #import "MainViewController.h"
 //#import "EquipmentInfo.h"
-#import "WDYButton.h"
+#import "TabbarButton.h"
 #import "WDYTabbar.h"
 #import "TitleBarView.h"
 
@@ -31,14 +31,18 @@
 //#import "ToletLTView.h"
 //#import "CloakroomLTView.h"
 //#import "GuestBathroomLTView.h"
+
+#import "WDYSwitch.h"
+#import "RoomLightsView.h"
 //
 #import "Aircon.h"
-#import "ACNavigationButton.h"
-#import "ACNavigationView.h"
+#import "NGButton.h"
+#import "NGView.h"
 #import "AirconKeyboardView.h"
 //
-//#import "ServerKeyboardView.h"
-//
+#import "Service.h"
+#import "ServerKeyboardView.h"
+#import "NHButton.h"
 //#import "SetKeyboardView.h"
 //
 //#import "NetworkInfo.h"
@@ -97,7 +101,7 @@
 #define AIRCON_VIEW_INIT_Y (180.0f)
 #define AIRCON_VIEW_WIDTH  (824.0f)
 #define AIRCON_VIEW_HEIGHT (420.0f)
-//aircon keyboard view info  //相对于导航界面
+//aircon keyboard view info  //相对于control view界面
 #define ACKB_VIEW_INIT_X (100.0f)
 #define ACKB_VIEW_INIT_Y (260.0f)
 #define ACKB_VIEW_WIDTH  (824.0f)
@@ -114,7 +118,7 @@
 #define NB_VIEW_INIT_Y (190.0f)
 #define NB_VIEW_WIDTH  (700.0f)
 #define NB_VIEW_HEIGHT (450.0f)
-//Light keyboard view info //相对于导航界面
+//Light keyboard view info //相对于control view界面
 #define LKB_VIEW_INIT_X (0.0f)
 #define LKB_VIEW_INIT_Y (60.0f)
 #define LKB_VIEW_WIDTH  (700.0f)

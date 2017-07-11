@@ -1,20 +1,20 @@
 //
-//  ACNavigationView.m
+//  NGView.m
 //  LZHGRControl
 //
 //  Created by Jony on 17/4/7.
 //  Copyright © 2017年 yavatop. All rights reserved.
 //
 
-#import "ACNavigationView.h"
+#import "NGView.h"
 
-@interface ACNavigationView ()
+@interface NGView ()
 
 @property (nonatomic, weak) UIButton *currentSelectedBtn;
 
 @end
 
-@implementation ACNavigationView
+@implementation NGView
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if ([super initWithFrame:frame]) {
@@ -30,14 +30,16 @@
 }
 
 #pragma mark -- 添加按钮
--(void)addACNavigationViewButtonWithChineseName:(NSString *)name_zh andEnglishName:(NSString *)name_en
+-(void)addNGViewButtonWithRoomInfoDictionary:(NSDictionary *)roomInfoDic
 {
     
     //使用自定义的按钮类型创建按钮
-    UIButton *button = [ACNavigationButton buttonWithType:UIButtonTypeCustom];
+    UIButton *button = [NGButton buttonWithType:UIButtonTypeCustom];
     
     //字符串处理
-    NSString *titleStr = [NSString stringWithFormat:@"%@\n%@", name_zh, [name_en uppercaseString]];
+    NSString *titleStr = [NSString stringWithFormat:@"%@\n%@"
+                          , [roomInfoDic objectForKey:@"name_zh"]
+                          , [[roomInfoDic objectForKey:@"name_en"] uppercaseString]];
     
     //设置按钮状态
     NSAttributedString *normalTitle = [[NSAttributedString alloc] initWithAttributedString:[self createdAttributedTitleWithString:titleStr andButtonState:UIControlStateNormal]];
@@ -50,21 +52,21 @@
     [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchDown];
     
     //绑定tag，tag绑定要在addSubview的方法之前
-    button.tag = self.subviews.count;
+    button.tag = [[roomInfoDic objectForKey:@"id"] integerValue];
     
     //添加按钮到自定义的tabBarView上
     [self addSubview:button];
     
     //设置默认选中
-    if (button.tag == 0) {
+    if (self.subviews.count == 1) {
         [self buttonClicked:button];
     }
     
 }
 
 - (void)buttonClicked:(UIButton *)button{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(aCNavigationView:didSelectedFrom:to:)]) {
-        [self.delegate aCNavigationView:self didSelectedFrom:self.currentSelectedBtn.tag to:button.tag];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(NGView:didSelectedFrom:to:)]) {
+        [self.delegate NGView:self didSelectedFrom:self.currentSelectedBtn.tag to:button.tag];
     }
     
     self.currentSelectedBtn.selected = NO;
@@ -93,7 +95,7 @@
     //设置不同行字符的大小
     NSRange range = [string rangeOfString:@"\n"];
     if (range.location != NSNotFound) {
-           [attributedStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:32.0] range:NSMakeRange(0, range.location)];
+           [attributedStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:28.0] range:NSMakeRange(0, range.location)];
     }
     
     //根据状态设置字体颜色
@@ -117,8 +119,10 @@
     CGFloat btnH = 80;
     CGFloat initialX  = 0;
     
+    NSInteger index = 0;
+    
     for (UIButton *btn in self.subviews) {
-        CGFloat btnIntX = btnW * btn.tag + initialX;
+        CGFloat btnIntX = btnW * (index++) + initialX;
         btn.frame = CGRectMake(btnIntX, 0, btnW, btnH);
     }
     

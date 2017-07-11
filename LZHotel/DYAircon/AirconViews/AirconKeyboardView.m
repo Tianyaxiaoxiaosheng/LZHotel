@@ -88,7 +88,7 @@
 
 - (void)setSetTemp:(NSInteger)setTemp{
     _setTemp = setTemp;
-    self.temperatureLabel.text = [NSString stringWithFormat:@"%ld", setTemp];
+    self.temperatureLabel.text = [NSString stringWithFormat:@"s%ld", setTemp];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.temperatureLabel.text = [NSString stringWithFormat:@"%ld", self.aircon.actualTemp];
     });
@@ -100,6 +100,6 @@
     self.temperatureLabel.text = [NSString stringWithFormat:@"%ld", aircon.actualTemp];
     self.windTypeImage.image = [UIImage imageNamed:[self.windTypeImages objectAtIndex:aircon.windType]];
     self.modeTypeImage.image = [UIImage imageNamed:[self.modeTypeImages objectAtIndex:aircon.modelType]];
-    self.setTemp = aircon.setTemp;
+    _setTemp = aircon.setTemp;
 }
 @end

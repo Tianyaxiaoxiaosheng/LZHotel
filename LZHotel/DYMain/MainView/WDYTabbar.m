@@ -34,7 +34,7 @@
 -(void)addTabbarButtonWithChineseName:(NSString *)name_zh andEnglishName:(NSString *)name_en{
     
     //使用自定义的按钮类型创建按钮
-    UIButton *button = [WDYButton buttonWithType:UIButtonTypeCustom];
+    UIButton *button = [TabbarButton buttonWithType:UIButtonTypeCustom];
     
     //字符串处理
     NSString *titleStr = [NSString stringWithFormat:@"%@\n%@", name_zh, [name_en uppercaseString]];

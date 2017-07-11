@@ -1,14 +1,14 @@
 //
-//  ACNavigationButton.m
+//  NGButton.m
 //  LZHotel
 //
 //  Created by Jony on 17/7/7.
 //  Copyright © 2017年 yavatop. All rights reserved.
 //
 
-#import "ACNavigationButton.h"
+#import "NGButton.h"
 
-@implementation ACNavigationButton
+@implementation NGButton
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {

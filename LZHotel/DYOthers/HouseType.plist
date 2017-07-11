@@ -286,8 +286,57 @@
 						<string>bedroom</string>
 						<key>name_zh</key>
 						<string>卧室</string>
-						<key>switchs</key>
-						<array/>
+						<key>lights</key>
+						<array>
+							<dict>
+								<key>id</key>
+								<string>1</string>
+								<key>name_zh</key>
+								<string>玄关灯</string>
+								<key>name_en</key>
+								<string>xuan guan</string>
+							</dict>
+							<dict>
+								<key>id</key>
+								<string>2</string>
+								<key>name_zh</key>
+								<string>玄关灯</string>
+								<key>name_en</key>
+								<string>xuan guan</string>
+							</dict>
+							<dict>
+								<key>id</key>
+								<string>3</string>
+								<key>name_zh</key>
+								<string>玄关灯</string>
+								<key>name_en</key>
+								<string>xuan guan</string>
+							</dict>
+							<dict>
+								<key>id</key>
+								<string>4</string>
+								<key>name_zh</key>
+								<string>玄关灯</string>
+								<key>name_en</key>
+								<string>xuan guan</string>
+							</dict>
+							<dict>
+								<key>id</key>
+								<string>5</string>
+								<key>name_zh</key>
+								<string>玄关灯</string>
+								<key>name_en</key>
+								<string>xuan guan</string>
+							</dict>
+							<dict>
+								<key>id</key>
+								<string>6</string>
+								<key>name_zh</key>
+								<string>玄关灯</string>
+								<key>name_en</key>
+								<string>xuan guan</string>
+							</dict>
+						</array>
 					</dict>
 					<dict>
 						<key>id</key>
@@ -295,8 +344,28 @@
 						<key>name_en</key>
 						<string>toilet</string>
 						<key>name_zh</key>
-						<string>卫生间</string>
-						<key>switches</key>
+						<string>客厅</string>
+						<key>lights</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>id</key>
+						<string>3</string>
+						<key>name_en</key>
+						<string>bedroom</string>
+						<key>name_zh</key>
+						<string>卧室卫生间</string>
+						<key>lights</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>id</key>
+						<string>4</string>
+						<key>name_en</key>
+						<string>bedroom</string>
+						<key>name_zh</key>
+						<string>客厅卫生间</string>
+						<key>lights</key>
 						<array/>
 					</dict>
 				</array>

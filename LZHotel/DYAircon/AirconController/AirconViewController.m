@@ -8,11 +8,11 @@
 
 #import "AirconViewController.h"
 
-@interface AirconViewController ()<ACNavigationViewDelegate>
+@interface AirconViewController ()<NGViewDelegate>
 
-@property (nonatomic, strong) ACNavigationView *aCNavigationView;    //键盘导航视图（包括键盘显示区域）
+@property (nonatomic, strong) NGView *airconNGView;    //键盘导航视图（包括键盘显示区域）
 @property (nonatomic, strong) NSArray *roomsArray;    //房间信息数组
-@property (nonatomic, strong) NSArray *airconViewArray; //空调界面数组
+@property (nonatomic, strong) NSDictionary *airconViewDic; //空调界面字典
 @property (nonatomic, strong) AirconKeyboardView *currentAirconView;
 
 @end
@@ -28,31 +28,31 @@
 }
 
 //懒加载导航视图
-- (ACNavigationView *)aCNavigationView{
-    if (!_aCNavigationView) {
-        _aCNavigationView = [[ACNavigationView alloc] initWithFrame:CGRectMake(AIRCON_VIEW_INIT_X, AIRCON_VIEW_INIT_Y, AIRCON_VIEW_WIDTH, AIRCON_VIEW_HEIGHT)];
-        _aCNavigationView.delegate = self;
+- (NGView *)airconNGView{
+    if (!_airconNGView) {
+        _airconNGView = [[NGView alloc] initWithFrame:CGRectMake(AIRCON_VIEW_INIT_X, AIRCON_VIEW_INIT_Y, AIRCON_VIEW_WIDTH, AIRCON_VIEW_HEIGHT)];
+        _airconNGView.delegate = self;
         
         //添加房间信息到导航栏
         for (NSDictionary *roomInfoDic in self.roomsArray) {
-            [_aCNavigationView addACNavigationViewButtonWithChineseName:[roomInfoDic objectForKey:@"name_zh"] andEnglishName:[roomInfoDic objectForKey:@"name_en"]];
+            [_airconNGView addNGViewButtonWithRoomInfoDictionary:roomInfoDic];
         }
         
     }
-    return _aCNavigationView;
+    return _airconNGView;
 }
 
-- (NSArray *)airconViewArray{
-    if (!_airconViewArray) {
-        NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
+- (NSDictionary *)airconViewDic{
+    if (!_airconViewDic) {
+        NSMutableDictionary *mutableDictionary = [[NSMutableDictionary alloc] init];
         for (NSDictionary *roomInfoDic in self.roomsArray) {
            AirconKeyboardView *airconView = [[AirconKeyboardView alloc] initWithFrame:CGRectMake(ACKB_VIEW_INIT_X, ACKB_VIEW_INIT_Y, ACKB_VIEW_WIDTH, ACKB_VIEW_HEIGHT)];
             airconView.airconId = [[roomInfoDic objectForKey:@"id"] integerValue];
-            [mutableArray addObject:airconView];
+            [mutableDictionary setObject:airconView forKey:[roomInfoDic objectForKey:@"id"]];
         }
-        _airconViewArray = [[NSArray alloc] initWithArray:mutableArray];
+        _airconViewDic = [[NSDictionary alloc] initWithDictionary:mutableDictionary];
     }
-    return _airconViewArray;
+    return _airconViewDic;
 }
 
 
@@ -63,17 +63,17 @@
 //    NSLog(@"controllerInfoDic: %@", self.controllerInfoDic);
     
     //添加导航视图
-    [self.view addSubview:self.aCNavigationView];
-    [self.view sendSubviewToBack:self.aCNavigationView];
+    [self.view addSubview:self.airconNGView];
+    [self.view sendSubviewToBack:self.airconNGView];
     
 }
 
-#pragma mark -- ACNavigationViewDelegate
-- (void)aCNavigationView:(ACNavigationView *)aCNavigationView didSelectedFrom:(NSInteger)from to:(NSInteger)to{
+#pragma mark -- NGViewDelegate
+- (void)NGView:(NGView *)NGView didSelectedFrom:(NSInteger)from to:(NSInteger)to{
     
     //替换界面
     [self.currentAirconView removeFromSuperview];
-    self.currentAirconView = [self.airconViewArray objectAtIndex:to];
+    self.currentAirconView = [self.airconViewDic objectForKey:[NSString stringWithFormat:@"%ld", to]];
     [self.view addSubview:self.currentAirconView];
     
     //test

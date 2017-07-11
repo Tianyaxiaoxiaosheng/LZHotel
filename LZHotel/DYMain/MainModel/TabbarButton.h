@@ -1,13 +1,13 @@
 //
-//  ACNavigationButton.h
+//  TabbarButton.h
 //  LZHotel
 //
-//  Created by Jony on 17/7/7.
+//  Created by Jony on 17/7/6.
 //  Copyright © 2017年 yavatop. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ACNavigationButton : UIButton
+@interface TabbarButton : UIButton
 
 @end
