@@ -6,6 +6,20 @@
 //  Copyright © 2017年 yavatop. All rights reserved.
 //
 
+//子控件的frame相关参数
+static CGFloat subViewW = 150;
+static CGFloat subViewH = 110;
+static CGFloat initialX = 15;
+static CGFloat initialY = 30;
+
+//每行的个数
+static NSInteger count_line = 5;
+//页面最大加载数量
+static NSInteger count_max = 15;
+
+
+
+
 #import "RoomLightsView.h"
 
 @implementation RoomLightsView
@@ -24,9 +38,16 @@
         sw.name_zh = [lighDic objectForKey:@"name_zh"];
         sw.name_en = [lighDic objectForKey:@"name_en"];
         
-        sw.tag = [[lighDic objectForKey:@"id"] integerValue];
+        //开关状态预置为关
+        sw.isOpen = NO;
         
-        [self addSubview:sw];
+        //检查下tag值是否已存在
+        NSInteger tag = [[lighDic objectForKey:@"id"] integerValue];
+        if (![self viewWithTag:tag]) {
+            
+            sw.tag = tag;
+            [self addSubview:sw];
+        }
     }
 }
 
@@ -34,22 +55,16 @@
 - (void)layoutSubviews{
     [super layoutSubviews];
     
-    CGFloat subViewW = 150;
-    CGFloat subViewH = 110;
-    CGFloat initialX  = 10;
-    CGFloat initialY  = 10;
-    
+    //记录当前位置
     NSInteger index = 0;
     
     for (UIView *subView in self.subviews) {
-        
-//        NSLog(@"index = %ld", index);
-        
-        CGFloat viewIntY = subViewH * (index/4) + initialY;
-        CGFloat viewIntX = subViewW * ((index++)%4) + initialX;
-       
-        
-        subView.frame = CGRectMake(viewIntX, viewIntY, subViewW, subViewH);
+
+        if (index < count_max) {
+            CGFloat viewIntY = subViewH * (index/count_line) + initialY;
+            CGFloat viewIntX = subViewW * ((index++)%count_line) + initialX;
+            subView.frame = CGRectMake(viewIntX, viewIntY, subViewW, subViewH);
+        }
     }
 
 }

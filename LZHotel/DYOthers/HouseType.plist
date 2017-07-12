@@ -346,7 +346,32 @@
 						<key>name_zh</key>
 						<string>客厅</string>
 						<key>lights</key>
-						<array/>
+						<array>
+							<dict>
+								<key>id</key>
+								<string>7</string>
+								<key>name_zh</key>
+								<string>玄关灯</string>
+								<key>name_en</key>
+								<string>xuan guan</string>
+							</dict>
+							<dict>
+								<key>id</key>
+								<string>8</string>
+								<key>name_zh</key>
+								<string>玄关灯</string>
+								<key>name_en</key>
+								<string>xuan guan</string>
+							</dict>
+							<dict>
+								<key>id</key>
+								<string>9</string>
+								<key>name_zh</key>
+								<string>玄关灯</string>
+								<key>name_en</key>
+								<string>xuan guan</string>
+							</dict>
+						</array>
 					</dict>
 					<dict>
 						<key>id</key>

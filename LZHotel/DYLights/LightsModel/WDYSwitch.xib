@@ -18,8 +18,8 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFR-AM-jim" customClass="NHButton">
                     <rect key="frame" x="10" y="0.0" width="130" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                    <state key="normal" image="OFF.png"/>
-                    <state key="selected" image="ON.png"/>
+                    <state key="normal" image="ON.png"/>
+                    <state key="selected" image="OFF.png"/>
                     <connections>
                         <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="sw6-J6-Myk"/>
                     </connections>

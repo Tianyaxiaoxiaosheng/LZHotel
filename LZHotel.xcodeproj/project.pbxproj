@@ -121,6 +121,8 @@
 		F047DC811F145F2B0010EF44 /* WDYSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = F047DC801F145F2B0010EF44 /* WDYSwitch.xib */; };
 		F047DC841F14642E0010EF44 /* WDYSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = F047DC831F14642E0010EF44 /* WDYSwitch.m */; };
 		F047DC871F1470CC0010EF44 /* RoomLightsView.m in Sources */ = {isa = PBXBuildFile; fileRef = F047DC861F1470CC0010EF44 /* RoomLightsView.m */; };
+		F047DC8B1F15ACA80010EF44 /* OverAllControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = F047DC891F15ACA80010EF44 /* OverAllControlView.m */; };
+		F047DC8C1F15ACA80010EF44 /* OverAllControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F047DC8A1F15ACA80010EF44 /* OverAllControlView.xib */; };
 		F0D0E5FC8D0C97F63149B7F1 /* libPods-LZHotel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B95DE1329294487AC66B2DD9 /* libPods-LZHotel.a */; };
 /* End PBXBuildFile section */
 
@@ -266,6 +268,9 @@
 		F047DC831F14642E0010EF44 /* WDYSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDYSwitch.m; sourceTree = "<group>"; };
 		F047DC851F1470CC0010EF44 /* RoomLightsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoomLightsView.h; path = LZHotel/DYLights/LightsModel/RoomLightsView.h; sourceTree = SOURCE_ROOT; };
 		F047DC861F1470CC0010EF44 /* RoomLightsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoomLightsView.m; path = LZHotel/DYLights/LightsModel/RoomLightsView.m; sourceTree = SOURCE_ROOT; };
+		F047DC881F15ACA80010EF44 /* OverAllControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverAllControlView.h; path = LZHotel/DYLights/LightsViews/OverAllControlView.h; sourceTree = SOURCE_ROOT; };
+		F047DC891F15ACA80010EF44 /* OverAllControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OverAllControlView.m; path = LZHotel/DYLights/LightsViews/OverAllControlView.m; sourceTree = SOURCE_ROOT; };
+		F047DC8A1F15ACA80010EF44 /* OverAllControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OverAllControlView.xib; path = LZHotel/DYLights/LightsViews/OverAllControlView.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -643,6 +648,9 @@
 		F047DC171F0E6BC90010EF44 /* LightsView */ = {
 			isa = PBXGroup;
 			children = (
+				F047DC881F15ACA80010EF44 /* OverAllControlView.h */,
+				F047DC891F15ACA80010EF44 /* OverAllControlView.m */,
+				F047DC8A1F15ACA80010EF44 /* OverAllControlView.xib */,
 				F047DC851F1470CC0010EF44 /* RoomLightsView.h */,
 				F047DC861F1470CC0010EF44 /* RoomLightsView.m */,
 			);
@@ -885,6 +893,7 @@
 				F047DBE91F0E0FA00010EF44 /* Scene22.png in Resources */,
 				F047DBF91F0E0FA00010EF44 /* tv-2.png in Resources */,
 				F047DC7B1F1328D30010EF44 /* ServerKeyboardView.xib in Resources */,
+				F047DC8C1F15ACA80010EF44 /* OverAllControlView.xib in Resources */,
 				F047DBFF1F0E0FA00010EF44 /* working2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -962,6 +971,7 @@
 				F047DB561F0E09410010EF44 /* MainViewController.m in Sources */,
 				F047DC461F0F1E250010EF44 /* Aircon.m in Sources */,
 				F047DB5C1F0E09410010EF44 /* WDYTabbar.m in Sources */,
+				F047DC8B1F15ACA80010EF44 /* OverAllControlView.m in Sources */,
 				F047DC871F1470CC0010EF44 /* RoomLightsView.m in Sources */,
 				F047DC301F0E6FD10010EF44 /* SettingViewController.m in Sources */,
 				F047DC491F0F67020010EF44 /* NGButton.m in Sources */,

@@ -24,7 +24,7 @@
 #import "ServiceViewController.h"
 #import "SettingViewController.h"
 //
-//#import "OverAllControlView.h"
+
 //#import "LTNavigationBarView.h"
 //#import "BedroomLTView.h"
 //#import "MainLampLTView.h"
@@ -34,6 +34,7 @@
 
 #import "WDYSwitch.h"
 #import "RoomLightsView.h"
+#import "OverAllControlView.h"
 //
 #import "Aircon.h"
 #import "NGButton.h"
@@ -96,6 +97,7 @@
 #define SET_VIEW_WIDTH  (724.0f)
 #define SET_VIEW_HEIGHT (400.0f)
 
+//Aircon
 //aircon view info
 #define AIRCON_VIEW_INIT_X (100.0f)
 #define AIRCON_VIEW_INIT_Y (180.0f)
@@ -109,20 +111,20 @@
 
 //Lights
 //Over All Control View Info
-#define OAC_VIEW_INIT_X (50.0f)
-#define OAC_VIEW_INIT_Y (190.0f)
-#define OAC_VIEW_WIDTH  (224.0f)
+#define OAC_VIEW_INIT_X (30.0f)
+#define OAC_VIEW_INIT_Y (180.0f)
+#define OAC_VIEW_WIDTH  (180.0f)
 #define OAC_VIEW_HEIGHT (450.0f)
-//Navigation bar  and keyboard background View Info
-#define NB_VIEW_INIT_X (294.0f)
-#define NB_VIEW_INIT_Y (190.0f)
-#define NB_VIEW_WIDTH  (700.0f)
-#define NB_VIEW_HEIGHT (450.0f)
+//lights View info
+#define LIGHTS_VIEW_INIT_X (230.0f)
+#define LIGHTS_VIEW_INIT_Y (180.0f)
+#define LIGHTS_VIEW_WIDTH  (770.0f)
+#define LIGHTS_VIEW_HEIGHT (450.0f)
 //Light keyboard view info //相对于control view界面
-#define LKB_VIEW_INIT_X (0.0f)
-#define LKB_VIEW_INIT_Y (60.0f)
-#define LKB_VIEW_WIDTH  (700.0f)
-#define LKB_VIEW_HEIGHT (390.0f)
+#define LKB_VIEW_INIT_X (230.0f)
+#define LKB_VIEW_INIT_Y (260.0f)
+#define LKB_VIEW_WIDTH  (770.0f)
+#define LKB_VIEW_HEIGHT (450.0f)
 
 
 
