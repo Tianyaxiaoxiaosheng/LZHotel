@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) NSArray *lightsArray;
 
+- (void)allLightsSwitch:(BOOL)isOpen;
+
 @end

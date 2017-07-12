@@ -56,6 +56,7 @@
             RoomLightsView *roomLightsView = [[RoomLightsView alloc] initWithFrame:CGRectMake(LKB_VIEW_INIT_X, LKB_VIEW_INIT_Y, LKB_VIEW_WIDTH, LKB_VIEW_HEIGHT)];
             //房间灯数组赋值，界面根据此添加灯开关控件
             roomLightsView.lightsArray = [roomInfoDic objectForKey:@"lights"];
+            roomLightsView.tag = [[roomInfoDic objectForKey:@"id"] integerValue];
             [mutableDictionary setObject:roomLightsView forKey:[roomInfoDic objectForKey:@"id"]];
         }
         _roomsViewDic = [[NSDictionary alloc] initWithDictionary:mutableDictionary];
@@ -113,11 +114,11 @@
 //    NSLog(@"controllerInfoDic: %@", self.controllerInfoDic);
 
     //测试 所有开关
-    for (WDYSwitch *sw in [self.allLightsDic allValues]) {
-        if ((sw.tag%2) == 0) {
-            sw.isOpen = YES;
-        }
-    }
+//    for (WDYSwitch *sw in [self.allLightsDic allValues]) {
+//        if ((sw.tag%2) == 0) {
+//            sw.isOpen = YES;
+//        }
+//    }
 
     
     //添加导航视图
@@ -140,9 +141,11 @@
 
 #pragma mark - OverAllControlView delegate 
 -(void)OverAllSwitchONAndOFF:(NSInteger)tag{
+    //test
+//    NSLog(@"OverAllSwitchONAndOFF: %ld", tag);
+//    NSLog(@"\ncurrentRoomView tag = %ld", self.currentRoomView.tag);
     
-    NSLog(@"OverAllSwitchONAndOFF: %ld", tag);
-
+    [(RoomLightsView *)self.currentRoomView allLightsSwitch:(tag == 1)];
 }
 
 @end

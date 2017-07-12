@@ -22,6 +22,10 @@ static NSInteger count_max = 15;
 
 #import "RoomLightsView.h"
 
+@interface RoomLightsView ()<WDYSwitchDelegate>
+
+@end
+
 @implementation RoomLightsView
 
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -35,6 +39,10 @@ static NSInteger count_max = 15;
 - (void)setLightsArray:(NSArray *)lightsArray {
     for (NSDictionary *lighDic in lightsArray) {
         WDYSwitch *sw = [[WDYSwitch alloc] init];
+        
+        //设置代理
+        sw.delegate = self;
+        
         sw.name_zh = [lighDic objectForKey:@"name_zh"];
         sw.name_en = [lighDic objectForKey:@"name_en"];
         
@@ -67,6 +75,22 @@ static NSInteger count_max = 15;
         }
     }
 
+}
+
+- (void)allLightsSwitch:(BOOL)isOpen{
+    for (UIView *subView in self.subviews) {
+        if ([subView isKindOfClass:[WDYSwitch class]]) {
+            ((WDYSwitch *)subView).isOpen = isOpen;
+        }
+    }
+}
+
+#pragma mark - WDYSwitchDelegate
+- (void)clickedWDYSwitch:(WDYSwitch *)sw {
+    
+    //test
+//    NSLog(@"sw tag = %ld", sw.tag);
+    sw.isOpen = !sw.isOpen;
 }
 
 @end

@@ -21,7 +21,6 @@
     if (self = [super initWithFrame:frame]) {
         self = [[[NSBundle mainBundle] loadNibNamed:@"WDYSwitch" owner:nil options:nil] lastObject];
         self.frame = frame;
- 
     }
     
     return self;
@@ -41,7 +40,13 @@
 }
 
 - (IBAction)buttonClicked:(UIButton *)sender {
-    NSLog(@"tag = %ld", self.tag);
+//    NSLog(@"tag = %ld", self.tag);
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(clickedWDYSwitch:)]) {
+        [self.delegate clickedWDYSwitch:self];
+    }
 }
+
+
 
 @end
