@@ -44,7 +44,8 @@
 #import "Service.h"
 #import "ServerKeyboardView.h"
 #import "NHButton.h"
-//#import "SetKeyboardView.h"
+//
+#import "SetKeyboardView.h"
 //
 //#import "NetworkInfo.h"
 //#import "UDPNetwork.h"

@@ -123,7 +123,10 @@
 		F047DC871F1470CC0010EF44 /* RoomLightsView.m in Sources */ = {isa = PBXBuildFile; fileRef = F047DC861F1470CC0010EF44 /* RoomLightsView.m */; };
 		F047DC8B1F15ACA80010EF44 /* OverAllControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = F047DC891F15ACA80010EF44 /* OverAllControlView.m */; };
 		F047DC8C1F15ACA80010EF44 /* OverAllControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F047DC8A1F15ACA80010EF44 /* OverAllControlView.xib */; };
+		F0BA82131F16FE54001E4F29 /* SetKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BA82111F16FE54001E4F29 /* SetKeyboardView.m */; };
+		F0BA82141F16FE54001E4F29 /* SetKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0BA82121F16FE54001E4F29 /* SetKeyboardView.xib */; };
 		F0D0E5FC8D0C97F63149B7F1 /* libPods-LZHotel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B95DE1329294487AC66B2DD9 /* libPods-LZHotel.a */; };
+		F0F4FFFC1F1895F80091C022 /* DataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F4FFFB1F1895F80091C022 /* DataCenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -271,6 +274,11 @@
 		F047DC881F15ACA80010EF44 /* OverAllControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverAllControlView.h; path = LZHotel/DYLights/LightsViews/OverAllControlView.h; sourceTree = SOURCE_ROOT; };
 		F047DC891F15ACA80010EF44 /* OverAllControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OverAllControlView.m; path = LZHotel/DYLights/LightsViews/OverAllControlView.m; sourceTree = SOURCE_ROOT; };
 		F047DC8A1F15ACA80010EF44 /* OverAllControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OverAllControlView.xib; path = LZHotel/DYLights/LightsViews/OverAllControlView.xib; sourceTree = SOURCE_ROOT; };
+		F0BA82101F16FE54001E4F29 /* SetKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetKeyboardView.h; sourceTree = "<group>"; };
+		F0BA82111F16FE54001E4F29 /* SetKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetKeyboardView.m; sourceTree = "<group>"; };
+		F0BA82121F16FE54001E4F29 /* SetKeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetKeyboardView.xib; sourceTree = "<group>"; };
+		F0F4FFFA1F1895F80091C022 /* DataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCenter.h; sourceTree = "<group>"; };
+		F0F4FFFB1F1895F80091C022 /* DataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCenter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,6 +397,8 @@
 		F047DB371F0DCDCA0010EF44 /* DYManager */ = {
 			isa = PBXGroup;
 			children = (
+				F0F4FFFA1F1895F80091C022 /* DataCenter.h */,
+				F0F4FFFB1F1895F80091C022 /* DataCenter.m */,
 			);
 			path = DYManager;
 			sourceTree = "<group>";
@@ -714,6 +724,9 @@
 		F047DC1E1F0E6D630010EF44 /* SettingViews */ = {
 			isa = PBXGroup;
 			children = (
+				F0BA82101F16FE54001E4F29 /* SetKeyboardView.h */,
+				F0BA82111F16FE54001E4F29 /* SetKeyboardView.m */,
+				F0BA82121F16FE54001E4F29 /* SetKeyboardView.xib */,
 			);
 			path = SettingViews;
 			sourceTree = "<group>";
@@ -848,6 +861,7 @@
 				F047DBE01F0E0FA00010EF44 /* OFF.png in Resources */,
 				F047DBEA1F0E0FA00010EF44 /* Scene3.png in Resources */,
 				F047DB3F1F0DCF660010EF44 /* InfoPlist.strings in Resources */,
+				F0BA82141F16FE54001E4F29 /* SetKeyboardView.xib in Resources */,
 				F047DBF01F0E0FA00010EF44 /* spa.png in Resources */,
 				F047DBCE1F0E0FA00010EF44 /* JiangWen2.png in Resources */,
 				F047DBBF1F0E0FA00010EF44 /* AGaosu2.png in Resources */,
@@ -963,8 +977,10 @@
 				F047DB1A1F0DC7810010EF44 /* main.m in Sources */,
 				F047DC841F14642E0010EF44 /* WDYSwitch.m in Sources */,
 				F047DC401F0F1D5F0010EF44 /* NGView.m in Sources */,
+				F0F4FFFC1F1895F80091C022 /* DataCenter.m in Sources */,
 				F047DB5A1F0E09410010EF44 /* TitleBarView.m in Sources */,
 				F047DC7A1F1328D30010EF44 /* ServerKeyboardView.m in Sources */,
+				F0BA82131F16FE54001E4F29 /* SetKeyboardView.m in Sources */,
 				F047DC7E1F134C5E0010EF44 /* NHButton.m in Sources */,
 				F047DC2D1F0E6F490010EF44 /* WDYViewController.m in Sources */,
 				F047DB3C1F0DCDCA0010EF44 /* AsyncUdpSocket.m in Sources */,
@@ -1028,6 +1044,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1077,6 +1094,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
