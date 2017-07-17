@@ -13,7 +13,6 @@
 // 包含时要注意顺序
 //Main Controller
 #import "MainViewController.h"
-//#import "EquipmentInfo.h"
 #import "TabbarButton.h"
 #import "WDYTabbar.h"
 #import "TitleBarView.h"
@@ -24,21 +23,14 @@
 #import "ServiceViewController.h"
 #import "SettingViewController.h"
 //
-
-//#import "LTNavigationBarView.h"
-//#import "BedroomLTView.h"
-//#import "MainLampLTView.h"
-//#import "ToletLTView.h"
-//#import "CloakroomLTView.h"
-//#import "GuestBathroomLTView.h"
-
 #import "WDYSwitch.h"
 #import "RoomLightsView.h"
 #import "OverAllControlView.h"
 //
-#import "Aircon.h"
 #import "NGButton.h"
 #import "NGView.h"
+//
+#import "Aircon.h"
 #import "AirconKeyboardView.h"
 //
 #import "Service.h"
@@ -47,11 +39,11 @@
 //
 #import "SetKeyboardView.h"
 //
-//#import "NetworkInfo.h"
-//#import "UDPNetwork.h"
-//#import "EPCore.h"
-//#import "WebConnect.h"
-//#import "StringTools.h"
+#import "DataCenter.h"
+#import "UDPNetwork.h"
+#import "EPCore.h"
+#import "WebConnect.h"
+#import "StringTools.h"
 
 //get local ip
 #import <ifaddrs.h>

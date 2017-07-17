@@ -36,7 +36,9 @@ static DataCenter *sharedDataCenter = nil;
 
 - (NSDictionary *)localInfoDic{
     if (!_localInfoDic) {
-        _localInfoDic = [[NSDictionary alloc] initWithDictionary:[self.dataCenterDic objectForKey:@"localInfo"]];
+//        _localInfoDic = [[NSDictionary alloc] initWithDictionary:[self.dataCenterDic objectForKey:@"localInfo"]];
+        _localInfoDic = @{@"localIp":[self getCurrentIpAddress]
+                          , @"localPort":[[self.dataCenterDic objectForKey:@"localInfo"] objectForKey:@"localPort"]};
     }
     return _localInfoDic;
 }
@@ -75,7 +77,9 @@ static DataCenter *sharedDataCenter = nil;
 - (NSMutableDictionary *)dataCenterDic{
     if (!_dataCenterDic) {
         _dataCenterDic = [NSMutableDictionary dictionaryWithContentsOfFile:self.dataCachePath];
-        if (!_dataCenterDic) {
+        
+        //测试期间，一直进入
+        if (true) {
             NSFileManager *fileManager = [NSFileManager defaultManager];
             [fileManager createFileAtPath:self.dataCachePath contents:nil attributes:nil];
             
@@ -138,11 +142,25 @@ static DataCenter *sharedDataCenter = nil;
 - (NSDictionary *)initializeTheDataCenterDic{
     NSDictionary *mutableDic = [[NSDictionary alloc] init];
     
-    NSDictionary *userInfoDic = @{@"userId":@"0000"};
-    NSDictionary *localInfoDic = @{@"localIp":@"192.168.0.1", @"localPort":@12345};
-    NSDictionary *webInfoDic = @{@"webIp":@"192.168.0.15", @"webHttpPort":@8080, @"webSocketPort":@9000, @"webName":@"hotelWeb"};
+    NSDictionary *roomInfoDic = @{@"roomNum":@"1002"
+                                  , @"roomId":@"1"
+                                  , @"roomType":@"4"};
+    NSDictionary *userInfoDic = @{@"userName":@"0000"
+                                  , @"userPwd":@"123456"};
+    NSDictionary *localInfoDic = @{@"localIp":@"192.168.0.1"
+                                   , @"localPort":@"12345"};
+    NSDictionary *serverInfoDic = @{@"serverIp":@"172.144.1.120"
+                                    , @"serverPort":@"8080"
+                                    , @"serverName":@"Demo1"};
+    NSDictionary *rcuInfoDic = @{@"rcuIp":@"172.144.1.120"
+                                 , @"rcuPort":@"60000"};
     
-    mutableDic = @{@"userInfo":userInfoDic, @"localInfo":localInfoDic, @"webInfo":webInfoDic};
+    
+    mutableDic = @{@"roomInfo":roomInfoDic
+                   , @"userInfo":userInfoDic
+                   , @"localInfo":localInfoDic
+                   , @"serverInfo":serverInfoDic
+                   , @"rcuInfo":rcuInfoDic};
     
     return mutableDic;
 }

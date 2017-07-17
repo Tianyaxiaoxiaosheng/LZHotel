@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F01288A61F1C4D44001EF060 /* NGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F01288A11F1C4BC5001EF060 /* NGButton.m */; };
+		F01288A71F1C4D4F001EF060 /* NGView.m in Sources */ = {isa = PBXBuildFile; fileRef = F01288A31F1C4BC5001EF060 /* NGView.m */; };
+		F01288AA1F1C4F1A001EF060 /* EPCore.m in Sources */ = {isa = PBXBuildFile; fileRef = F01288A91F1C4F1A001EF060 /* EPCore.m */; };
+		F01288AD1F1C832A001EF060 /* StringTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F01288AC1F1C832A001EF060 /* StringTools.m */; };
+		F01288B01F1C85A4001EF060 /* UDPNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = F01288AF1F1C85A4001EF060 /* UDPNetwork.m */; };
+		F01288B31F1C8678001EF060 /* WebConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = F01288B21F1C8678001EF060 /* WebConnect.m */; };
 		F047DB1A1F0DC7810010EF44 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F047DB191F0DC7810010EF44 /* main.m */; };
 		F047DB1D1F0DC7810010EF44 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F047DB1C1F0DC7810010EF44 /* AppDelegate.m */; };
 		F047DB231F0DC7810010EF44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F047DB211F0DC7810010EF44 /* Main.storyboard */; };
@@ -109,11 +115,9 @@
 		F047DC331F0E701D0010EF44 /* ServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F047DC321F0E701D0010EF44 /* ServiceViewController.m */; };
 		F047DC361F0E704C0010EF44 /* LightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F047DC351F0E704C0010EF44 /* LightsViewController.m */; };
 		F047DC391F0E70740010EF44 /* AirconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F047DC381F0E70740010EF44 /* AirconViewController.m */; };
-		F047DC401F0F1D5F0010EF44 /* NGView.m in Sources */ = {isa = PBXBuildFile; fileRef = F047DC3B1F0F1D5F0010EF44 /* NGView.m */; };
 		F047DC421F0F1D5F0010EF44 /* AirconKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = F047DC3E1F0F1D5F0010EF44 /* AirconKeyboardView.m */; };
 		F047DC431F0F1D5F0010EF44 /* AirconKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F047DC3F1F0F1D5F0010EF44 /* AirconKeyboardView.xib */; };
 		F047DC461F0F1E250010EF44 /* Aircon.m in Sources */ = {isa = PBXBuildFile; fileRef = F047DC451F0F1E250010EF44 /* Aircon.m */; };
-		F047DC491F0F67020010EF44 /* NGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F047DC481F0F67020010EF44 /* NGButton.m */; };
 		F047DC761F1325210010EF44 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = F047DC751F1325210010EF44 /* Service.m */; };
 		F047DC7A1F1328D30010EF44 /* ServerKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = F047DC781F1328D30010EF44 /* ServerKeyboardView.m */; };
 		F047DC7B1F1328D30010EF44 /* ServerKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F047DC791F1328D30010EF44 /* ServerKeyboardView.xib */; };
@@ -133,6 +137,18 @@
 		2A3D3475AC0717C31EF37E0B /* Pods-LZHotel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZHotel.release.xcconfig"; path = "Pods/Target Support Files/Pods-LZHotel/Pods-LZHotel.release.xcconfig"; sourceTree = "<group>"; };
 		2FFE69B8611212CDD5290638 /* Pods-LZHotel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZHotel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LZHotel/Pods-LZHotel.debug.xcconfig"; sourceTree = "<group>"; };
 		B95DE1329294487AC66B2DD9 /* libPods-LZHotel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LZHotel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F01288A01F1C4BC5001EF060 /* NGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGButton.h; sourceTree = "<group>"; };
+		F01288A11F1C4BC5001EF060 /* NGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGButton.m; sourceTree = "<group>"; };
+		F01288A21F1C4BC5001EF060 /* NGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGView.h; sourceTree = "<group>"; };
+		F01288A31F1C4BC5001EF060 /* NGView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGView.m; sourceTree = "<group>"; };
+		F01288A81F1C4F1A001EF060 /* EPCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPCore.h; sourceTree = "<group>"; };
+		F01288A91F1C4F1A001EF060 /* EPCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPCore.m; sourceTree = "<group>"; };
+		F01288AB1F1C832A001EF060 /* StringTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringTools.h; sourceTree = "<group>"; };
+		F01288AC1F1C832A001EF060 /* StringTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringTools.m; sourceTree = "<group>"; };
+		F01288AE1F1C85A4001EF060 /* UDPNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPNetwork.h; sourceTree = "<group>"; };
+		F01288AF1F1C85A4001EF060 /* UDPNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPNetwork.m; sourceTree = "<group>"; };
+		F01288B11F1C8678001EF060 /* WebConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebConnect.h; sourceTree = "<group>"; };
+		F01288B21F1C8678001EF060 /* WebConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebConnect.m; sourceTree = "<group>"; };
 		F047DB151F0DC7810010EF44 /* LZHotel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZHotel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F047DB191F0DC7810010EF44 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F047DB1B1F0DC7810010EF44 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -250,15 +266,11 @@
 		F047DC351F0E704C0010EF44 /* LightsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightsViewController.m; sourceTree = "<group>"; };
 		F047DC371F0E70740010EF44 /* AirconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirconViewController.h; sourceTree = "<group>"; };
 		F047DC381F0E70740010EF44 /* AirconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirconViewController.m; sourceTree = "<group>"; };
-		F047DC3A1F0F1D5F0010EF44 /* NGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGView.h; path = LZHotel/DYAircon/AirconViews/NGView.h; sourceTree = SOURCE_ROOT; };
-		F047DC3B1F0F1D5F0010EF44 /* NGView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGView.m; path = LZHotel/DYAircon/AirconViews/NGView.m; sourceTree = SOURCE_ROOT; };
 		F047DC3D1F0F1D5F0010EF44 /* AirconKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AirconKeyboardView.h; path = LZHotel/DYAircon/AirconViews/AirconKeyboardView.h; sourceTree = SOURCE_ROOT; };
 		F047DC3E1F0F1D5F0010EF44 /* AirconKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AirconKeyboardView.m; path = LZHotel/DYAircon/AirconViews/AirconKeyboardView.m; sourceTree = SOURCE_ROOT; };
 		F047DC3F1F0F1D5F0010EF44 /* AirconKeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AirconKeyboardView.xib; path = LZHotel/DYAircon/AirconViews/AirconKeyboardView.xib; sourceTree = SOURCE_ROOT; };
 		F047DC441F0F1E250010EF44 /* Aircon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aircon.h; sourceTree = "<group>"; };
 		F047DC451F0F1E250010EF44 /* Aircon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aircon.m; sourceTree = "<group>"; };
-		F047DC471F0F67020010EF44 /* NGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGButton.h; path = ../DYAircon/AirconModel/NGButton.h; sourceTree = "<group>"; };
-		F047DC481F0F67020010EF44 /* NGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGButton.m; path = ../DYAircon/AirconModel/NGButton.m; sourceTree = "<group>"; };
 		F047DC741F1325210010EF44 /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
 		F047DC751F1325210010EF44 /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
 		F047DC771F1328D30010EF44 /* ServerKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerKeyboardView.h; sourceTree = "<group>"; };
@@ -399,6 +411,14 @@
 			children = (
 				F0F4FFFA1F1895F80091C022 /* DataCenter.h */,
 				F0F4FFFB1F1895F80091C022 /* DataCenter.m */,
+				F01288A81F1C4F1A001EF060 /* EPCore.h */,
+				F01288A91F1C4F1A001EF060 /* EPCore.m */,
+				F01288AB1F1C832A001EF060 /* StringTools.h */,
+				F01288AC1F1C832A001EF060 /* StringTools.m */,
+				F01288AE1F1C85A4001EF060 /* UDPNetwork.h */,
+				F01288AF1F1C85A4001EF060 /* UDPNetwork.m */,
+				F01288B11F1C8678001EF060 /* WebConnect.h */,
+				F01288B21F1C8678001EF060 /* WebConnect.m */,
 			);
 			path = DYManager;
 			sourceTree = "<group>";
@@ -734,10 +754,10 @@
 		F047DC7F1F135C850010EF44 /* DYNavigation */ = {
 			isa = PBXGroup;
 			children = (
-				F047DC471F0F67020010EF44 /* NGButton.h */,
-				F047DC481F0F67020010EF44 /* NGButton.m */,
-				F047DC3A1F0F1D5F0010EF44 /* NGView.h */,
-				F047DC3B1F0F1D5F0010EF44 /* NGView.m */,
+				F01288A01F1C4BC5001EF060 /* NGButton.h */,
+				F01288A11F1C4BC5001EF060 /* NGButton.m */,
+				F01288A21F1C4BC5001EF060 /* NGView.h */,
+				F01288A31F1C4BC5001EF060 /* NGView.m */,
 			);
 			path = DYNavigation;
 			sourceTree = "<group>";
@@ -967,30 +987,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F01288A71F1C4D4F001EF060 /* NGView.m in Sources */,
+				F01288A61F1C4D44001EF060 /* NGButton.m in Sources */,
 				F047DC111F0E0FED0010EF44 /* TabbarButton.m in Sources */,
+				F01288AA1F1C4F1A001EF060 /* EPCore.m in Sources */,
 				F047DC421F0F1D5F0010EF44 /* AirconKeyboardView.m in Sources */,
 				F047DB1D1F0DC7810010EF44 /* AppDelegate.m in Sources */,
+				F01288B01F1C85A4001EF060 /* UDPNetwork.m in Sources */,
 				F047DC761F1325210010EF44 /* Service.m in Sources */,
 				F047DC331F0E701D0010EF44 /* ServiceViewController.m in Sources */,
 				F047DC361F0E704C0010EF44 /* LightsViewController.m in Sources */,
 				F047DC391F0E70740010EF44 /* AirconViewController.m in Sources */,
 				F047DB1A1F0DC7810010EF44 /* main.m in Sources */,
 				F047DC841F14642E0010EF44 /* WDYSwitch.m in Sources */,
-				F047DC401F0F1D5F0010EF44 /* NGView.m in Sources */,
 				F0F4FFFC1F1895F80091C022 /* DataCenter.m in Sources */,
 				F047DB5A1F0E09410010EF44 /* TitleBarView.m in Sources */,
 				F047DC7A1F1328D30010EF44 /* ServerKeyboardView.m in Sources */,
 				F0BA82131F16FE54001E4F29 /* SetKeyboardView.m in Sources */,
 				F047DC7E1F134C5E0010EF44 /* NHButton.m in Sources */,
 				F047DC2D1F0E6F490010EF44 /* WDYViewController.m in Sources */,
+				F01288B31F1C8678001EF060 /* WebConnect.m in Sources */,
 				F047DB3C1F0DCDCA0010EF44 /* AsyncUdpSocket.m in Sources */,
 				F047DB561F0E09410010EF44 /* MainViewController.m in Sources */,
+				F01288AD1F1C832A001EF060 /* StringTools.m in Sources */,
 				F047DC461F0F1E250010EF44 /* Aircon.m in Sources */,
 				F047DB5C1F0E09410010EF44 /* WDYTabbar.m in Sources */,
 				F047DC8B1F15ACA80010EF44 /* OverAllControlView.m in Sources */,
 				F047DC871F1470CC0010EF44 /* RoomLightsView.m in Sources */,
 				F047DC301F0E6FD10010EF44 /* SettingViewController.m in Sources */,
-				F047DC491F0F67020010EF44 /* NGButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

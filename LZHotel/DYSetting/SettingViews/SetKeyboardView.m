@@ -84,8 +84,13 @@
 
 }
 - (IBAction)test {
-    //测试发送数据
-    //[[UDPNetwork sharedUDPNetwork] sendDataToRCU:[NSData dataWithBytes:@"Test message" length:12]];
+//    测试udp发送数据
+    UDPNetwork *sharedUDPNetwork = [UDPNetwork sharedUDPNetwork];
+    [sharedUDPNetwork startReceiveNetworkData];
+    
+//        [sharedUDPNetwork disConnect];
+    [sharedUDPNetwork sendDataToRCU:[NSData dataWithBytes:@"Test message" length:12]];
+//    [sharedUDPNetwork disConnect];
     
     //测试IP地址比对
 //    NSString *ipAddress = @"172.144.1.107";
@@ -140,34 +145,37 @@
 //    buffer = strcat(buffer, c);
     
     //ARC机制下操作内存需要申请
-    char *str = "EC|RN0851|PW0851|LC8,0:9,0:10,0|";
-    char pried = 0x02;
-    char end = 0x03;
-    char check = 0x01;
-    char *buff = (char *) malloc(3 + strlen(str));
-    
-    strncpy(buff, &pried,1);
-
-    strncat(buff, str, strlen(str));
-
-    strncat(buff, &end,1);
-
-    strncat(buff, &check,1);
-
-    NSLog(@"length:%ld",strlen(&pried));//输出为4
-    
-    for (int i = 0; i < strlen(buff); i++) {
-        printf("-%x", buff[i]);
-    }
-    
-
-    
-    
-    
-    
-    NSData *data = [NSData dataWithBytes:buff length:strlen(buff)];
-
+//    char *str = "EC|RN0851|PW0851|LC8,0:9,0:10,0|";
+//    char pried = 0x02;
+//    char end = 0x03;
+//    char check = 0x01;
+//    char *buff = (char *) malloc(3 + strlen(str));
+//    
+//    strncpy(buff, &pried,1);
+//
+//    strncat(buff, str, strlen(str));
+//
+//    strncat(buff, &end,1);
+//
+//    strncat(buff, &check,1);
+//
+//    NSLog(@"length:%ld",strlen(&pried));//输出为4
+//    
+//    for (int i = 0; i < strlen(buff); i++) {
+//        printf("-%x", buff[i]);
+//    }
+//    
+//
+//    
+//    
+//    
+//    
+//    NSData *data = [NSData dataWithBytes:buff length:strlen(buff)];
+//
 //    [sharedUDPNetwork sendDataToRCU:data];
+    
+//    测试数据中心
+    NSLog(@"%@", [DataCenter sharedDataCenter].localInfoDic);
 }
 
 #pragma mark - 文本处理
