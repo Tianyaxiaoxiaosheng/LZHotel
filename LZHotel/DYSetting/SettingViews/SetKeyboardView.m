@@ -77,19 +77,19 @@
 //        return;
 //    }
     
-    //注册
-//    [EPCore registerWithUserInfo:self.roomNumTextField.text andPassword:self.keyTextField.text];
+//    注册
+    [EPCore registerWithUserInfo:self.roomNumTextField.text andPassword:self.keyTextField.text];
     
     //更新本地数据放在注册方法中
 
 }
 - (IBAction)test {
 //    测试udp发送数据
-    UDPNetwork *sharedUDPNetwork = [UDPNetwork sharedUDPNetwork];
-    [sharedUDPNetwork startReceiveNetworkData];
+//    UDPNetwork *sharedUDPNetwork = [UDPNetwork sharedUDPNetwork];
+//    [sharedUDPNetwork startReceiveNetworkData];
     
 //        [sharedUDPNetwork disConnect];
-    [sharedUDPNetwork sendDataToRCU:[NSData dataWithBytes:@"Test message" length:12]];
+//    [sharedUDPNetwork sendDataToRCU:[NSData dataWithBytes:@"Test message" length:12]];
 //    [sharedUDPNetwork disConnect];
     
     //测试IP地址比对
@@ -100,11 +100,11 @@
 //        NSLog(@"ip地址不同");
 //    }
     
-    //测试注册
+//    测试注册
 //    NSDictionary *infoDic = @{@"localIp":@"192.168.0.15",@"localPort":@"12345",@"userId":@"1208",@"userPwd":@"123456"};
 //    NSLog(@"测试按钮点击");
 //    
-//    NSString *strUrl = [[StringTools sharedStringTools] registerStringUrlWithDictionary:infoDic];
+//    NSString *strUrl = [StringTools registerStringUrlWithDictionary:infoDic];
     
     
     //测试获取状态信息
@@ -175,7 +175,8 @@
 //    [sharedUDPNetwork sendDataToRCU:data];
     
 //    测试数据中心
-    NSLog(@"%@", [DataCenter sharedDataCenter].localInfoDic);
+//    NSLog(@"%@", [DataCenter sharedDataCenter].localInfoDic);
+    
 }
 
 #pragma mark - 文本处理

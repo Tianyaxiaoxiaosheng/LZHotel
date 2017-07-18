@@ -151,7 +151,7 @@ static DataCenter *sharedDataCenter = nil;
                                    , @"localPort":@"12345"};
     NSDictionary *serverInfoDic = @{@"serverIp":@"172.144.1.120"
                                     , @"serverPort":@"8080"
-                                    , @"serverName":@"Demo1"};
+                                    , @"serverName":@"hotelWeb"};
     NSDictionary *rcuInfoDic = @{@"rcuIp":@"172.144.1.120"
                                  , @"rcuPort":@"60000"};
     
