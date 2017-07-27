@@ -63,27 +63,40 @@
     switch (button.tag) {
         case 1:
             self.setTemp++;
+            self.aircon.setTemp++;
             break;
         case 2:
             self.setTemp--;
+            self.aircon.setTemp++;
             break;
         case 3:
         case 4:
         case 5:
-            self.modeTypeImage.image = [UIImage imageNamed:self.modeTypeImages[button.tag%3]];
+//            self.modeTypeImage.image = [UIImage imageNamed:self.modeTypeImages[button.tag%3]];
+            self.aircon.modelType = button.tag%3;
             break;
         case 6:
         case 7:
         case 8:
         case 9:
         case 10:
-            self.windTypeImage.image = [UIImage imageNamed:self.windTypeImages[button.tag%6]];
+//            self.windTypeImage.image = [UIImage imageNamed:self.windTypeImages[button.tag%6]];
+            self.aircon.windType = button.tag%6;
             break;
 
             
         default:
             break;
     }
+    
+    NSString *OrderStr = [NSString stringWithFormat:@"AC%ld,%ld,%ld,%ld,%ld"
+                          , self.airconId
+                          , self.aircon.actualTemp
+                          , self.aircon.setTemp
+                          , self.aircon.modelType
+                          , self.aircon.windType
+                          ];
+    [EPCore sendECOrderToRcu:OrderStr];
 }
 
 - (void)setSetTemp:(NSInteger)setTemp{

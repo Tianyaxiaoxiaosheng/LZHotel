@@ -18,4 +18,13 @@
 //对接收到的RCU信息解析
 + (void) rcuInfoAnalysis:(NSData *)data;
 
+//发送EC指令
++ (BOOL) sendECOrderToRcu:(NSString *)string;
+
+//发送QS指令
++ (BOOL) sendQSOrderToRcu;
+
+//发送QI指令
++ (BOOL) sendQIOrderToRcu;
+
 @end

@@ -131,6 +131,11 @@
     //注册通知，死亡时移除
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(controlInformationProcessing:) name:@"Lights" object:nil];
     
+    //获取状态信息
+    [[UDPNetwork sharedUDPNetwork] startReceiveNetworkData];
+    [EPCore sendQSOrderToRcu];
+
+    
 }
 
 //控制器死亡时移除观察者，
@@ -139,7 +144,6 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
 }
-
 
 
 #pragma mark -- NGViewDelegate
@@ -165,48 +169,57 @@
     NSString *string = [notification object];
     NSLog(@"Lights Notification : %@", string);
     
-//    //1、截取字符串,获取灯光控制类型
-//    NSString *typeStr = [string substringToIndex:2];
-//    //    NSString *orderStr = [string substringFromIndex:4];
-//    
-//    if ([typeStr isEqualToString:@"LC"]) {
-//        NSLog(@"Lights Notification : %@", string);
-//        NSString *statusStr = [string substringWithRange:NSMakeRange(2, 1)];
-//        BOOL isOpen = ([statusStr integerValue] == 1)? YES:NO;
-//        
-//        if (isOpen) {
-//            NSLog(@"****open*****");
-//        }
-//        
-//        NSString *orderStr = [string substringFromIndex:4];
-//        //NSLog(@"orderStr: %@", orderStr);
-//        NSArray *strArray = [orderStr componentsSeparatedByString:@","];
-//        //NSLog(@"strArray count: %d", strArray.count);
-//        
+    //1、截取字符串,获取灯光控制类型
+    NSString *typeStr = [string substringToIndex:2];
+    //    NSString *orderStr = [string substringFromIndex:4];
     
-//        for (NSString *lightId in [self.lightsDic allKeys]) {
-//            
-//            UIButton *button = [self.lightsDic objectForKey:lightId];
-//            
-//            //            if ([strArray containsObject:lightId]) {
-//            //                NSLog(@"lightId = %@",lightId);
-//            //                button.selected = isOpen;
-//            //            }else {
-//            //                button.selected = !isOpen;
-//            //            }
-//            //            button.selected = [strArray containsObject:lightId] ? isOpen : (!isOpen);
-//            
-//            //特殊的255
-//            if ([strArray containsObject:@"255"]) {
-//                button.selected = isOpen;
+    //2、判断类型,分别处理
+    if ([typeStr isEqualToString:@"LC"]) {
+        [self lcOrderAnalysis:string];
+    }else if ([typeStr isEqualToString:@"DM"]) {
+        [self dmOrderAnalysis:string];
+    }
+    
+}
+
+//LC指令解析
+- (void)lcOrderAnalysis:(NSString *)lcStr{
+    
+    //1、获取开关状态
+    NSString *statusStr = [lcStr substringWithRange:NSMakeRange(2, 1)];
+    BOOL isOpen = ([statusStr integerValue] == 1)? YES:NO;
+    
+    //2、获取灯的编号，并分解成数组
+    NSString *orderStr = [lcStr substringFromIndex:4];
+    NSArray *idStrArray = [orderStr componentsSeparatedByString:@","];
+    
+    //3、根据状态，对编号数组进行处理,根据是否是特殊的255分别处理
+    if ([idStrArray containsObject:@"255"]) {
+        
+       //如果是255，则获取所有的Value值，统一处理
+        for (WDYSwitch *wdySwitch in [self.allLightsDic allValues]) {
+            wdySwitch.isOpen = isOpen;
+        }
+    } else{
+        
+        //得到所有的key值，判断是否在指令数组，分别处理
+        for (NSString *idStr in [self.allLightsDic allKeys]) {
+            
+            WDYSwitch *wdySwitch = [self.allLightsDic objectForKey:idStr];
+            wdySwitch.isOpen = [idStrArray containsObject:idStr] ? isOpen:(!isOpen);
+//            //id值在指令数组
+//            if ([idStrArray containsObject:idStr]) {
+//                wdySwitch.isOpen = isOpen;
 //            }else {
-//                button.selected = [strArray containsObject:lightId] ? isOpen : (!isOpen);
+//                wdySwitch.isOpen = !isOpen;
 //            }
-//        }
-//
-//    }else if ([typeStr isEqualToString:@"DM"]) {
-//    }
+        }
+    }
     
+}
+
+//DM指令解析
+- (void)dmOrderAnalysis:(NSString *)lcStr{
 }
 
 @end

@@ -133,9 +133,13 @@ static UDPNetwork *sharedUDPNetwork = nil;
 //发送数据方法
 - (BOOL)sendDataToRCU:(NSData *)data{
     
-    NSDictionary *rcuInfoDic = [[DataCenter sharedDataCenter] rcuInfoDic];
-    NSString *rcuIp  = [rcuInfoDic objectForKey:@"rcuIp"];
-    int rcuPort = [[rcuInfoDic objectForKey:@"rcuPort"] intValue];
+//    NSDictionary *rcuInfoDic = [[DataCenter sharedDataCenter] rcuInfoDic];
+//    NSString *rcuIp  = [rcuInfoDic objectForKey:@"rcuIp"];
+//    int rcuPort = [[rcuInfoDic objectForKey:@"rcuPort"] intValue];
+    
+    //test
+    NSString *rcuIp = @"172.144.8.51";
+    int rcuPort = 9990;
     
     if ([self.socket sendData:data toHost:rcuIp port:rcuPort withTimeout:-1 tag:0]) {
         return true;

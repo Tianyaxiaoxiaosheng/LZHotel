@@ -69,6 +69,8 @@
 
    //添加控制器
     [self addControllerForTabBarController];
+    
+
 }
 
 - (void)viewDidLayoutSubviews{

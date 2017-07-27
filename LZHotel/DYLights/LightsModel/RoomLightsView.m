@@ -9,11 +9,13 @@
 //子控件的frame相关参数
 static CGFloat subViewW = 150;
 static CGFloat subViewH = 110;
-static CGFloat initialX = 15;
+static CGFloat initialX = 40;
 static CGFloat initialY = 30;
 
+static CGFloat intervalX = 30;
+
 //每行的个数
-static NSInteger count_line = 5;
+static NSInteger count_line = 4;
 //页面最大加载数量
 static NSInteger count_max = 15;
 
@@ -70,7 +72,7 @@ static NSInteger count_max = 15;
 
         if (index < count_max) {
             CGFloat viewIntY = subViewH * (index/count_line) + initialY;
-            CGFloat viewIntX = subViewW * ((index++)%count_line) + initialX;
+            CGFloat viewIntX = (subViewW+intervalX) * ((index++)%count_line) + initialX;
             subView.frame = CGRectMake(viewIntX, viewIntY, subViewW, subViewH);
         }
     }
@@ -90,7 +92,11 @@ static NSInteger count_max = 15;
     
     //test
 //    NSLog(@"sw tag = %ld", sw.tag);
-    sw.isOpen = !sw.isOpen;
+//    sw.isOpen = !sw.isOpen;
+    int status = sw.isOpen ? 0:1;
+    
+    NSString *OrderStr = [NSString stringWithFormat:@"LC%ld,%d", sw.tag, status];
+    [EPCore sendECOrderToRcu:OrderStr];
 }
 
 @end

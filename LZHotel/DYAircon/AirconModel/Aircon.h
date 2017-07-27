@@ -24,8 +24,8 @@ typedef enum : NSUInteger {
 
 @interface Aircon : NSObject
 
-@property (nonatomic, assign) NSUInteger actualTemp;
-@property (nonatomic, assign) NSUInteger setTemp;
+@property (nonatomic, assign) NSInteger actualTemp;
+@property (nonatomic, assign) NSInteger setTemp;
 @property (nonatomic, assign) ModelType modelType;
 @property (nonatomic, assign) WindType windType;
 

@@ -86,12 +86,13 @@
     NSString *strRcuInfo = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
     //筛选一下字符串
-    static NSString *tempStr = nil;
-    if ([strRcuInfo isEqualToString:tempStr]) {
-        return;
-    }else{
-        tempStr = strRcuInfo;
-    }
+//    static NSString *tempStr = nil;
+//    if ([strRcuInfo isEqualToString:tempStr]) {
+//        return;
+//    }else{
+//        tempStr = strRcuInfo;
+//    }
+    
     NSLog(@"\nStart Analysis ----------");
     
     NSUInteger strLength;
@@ -186,5 +187,114 @@
     }
     
 }
+
+#pragma mark -- 给rcu发送指令
++ (BOOL)sendECOrderToRcu:(NSString *)string {
+    
+    //test
+//    NSLog(@"orderStr: %@", string);
+//    return true;
+    
+    //房间信息
+//    NSDictionary *roomInfoDic = [[DataCenter sharedDataCenter] roomInfoDic];
+//    NSString *orderStr = [NSString stringWithFormat:@"EC|RN%@|PW%@|%@|"
+//                          , [roomInfoDic objectForKey:@"roomNum"]
+//                          , [roomInfoDic objectForKey:@"roomNum"]
+//                          , string
+//                          ];
+    
+    //test
+        NSString *orderStr = [NSString stringWithFormat:@"EC|RN%@|PW%@|%@|"
+                              , @"0851"
+                              , @"0851"
+                              , string
+                              ];
+    
+    if ([self orderPackageAndSend:orderStr]) {
+        return true;
+    }
+    
+    return false;
+    
+}
+
++ (BOOL)sendQSOrderToRcu{
+    
+    //房间信息
+    //    NSDictionary *roomInfoDic = [[DataCenter sharedDataCenter] roomInfoDic];
+    //    NSString *orderStr = [NSString stringWithFormat:@"EC|RN%@|PW%@|%@|"
+    //                          , [roomInfoDic objectForKey:@"roomNum"]
+    //                          , [roomInfoDic objectForKey:@"roomNum"]
+    //                          , string
+    //                          ];
+    
+    //test
+    NSString *orderStr = [NSString stringWithFormat:@"QS|RN%@|PW%@|"
+                          , @"0851"
+                          , @"0851"
+                          ];
+    
+    if ([self orderPackageAndSend:orderStr]) {
+        return true;
+    }
+    
+    return false;
+    
+}
+
++ (BOOL)sendQIOrderToRcu{
+    NSString *orderStr = [NSString stringWithFormat:@"QI|RN%@|PW%@|"
+                          , @"0851"
+                          , @"0851"
+                          ];
+    
+    if ([self orderPackageAndSend:orderStr]) {
+        return true;
+    }
+    
+    return false;
+}
+
++ (BOOL)orderPackageAndSend:(NSString *)orderStr {
+    
+    //    ARC机制下操作内存需要申请
+    //    char *str = "EC|RN0851|PW0851|LC8,0:9,0:10,0|";
+
+    const char *str = [orderStr UTF8String];
+    //    NSLog(@"str: %s", str);
+    
+    //附加的字符，注意要使用十六进制，防止因为ASCII转换崩溃
+    //前导字符
+    char pried = 0x02;
+    //结束字符
+    char end = 0x03;
+    //校验字符
+    char check = 0x01;
+    
+    //申请内存，ARC机制下，必须
+    char *buff = (char *) malloc(3 + strlen(str));
+    
+    //使用内存拷贝处理，依次进行组合，注意控制长度，防止字符串最后的\n
+    strncpy(buff, &pried,1);
+    strncat(buff, str, strlen(str));
+    strncat(buff, &end,1);
+    strncat(buff, &check,1);
+    
+    //    NSLog(@"length:%ld",strlen(&pried));//输出为4
+    //
+    //    for (int i = 0; i < strlen(buff); i++) {
+    //        printf("-%x", buff[i]);
+    //    }
+    
+    //转换data，发送
+    NSData *data = [NSData dataWithBytes:buff length:strlen(buff)];
+    if ([[UDPNetwork sharedUDPNetwork] sendDataToRCU:data]) {
+        return true;
+    }
+    
+    return false;
+    
+}
+
 
 @end
