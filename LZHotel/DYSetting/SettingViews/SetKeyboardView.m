@@ -55,11 +55,11 @@
 
 //switch用于测试网络接收
 - (IBAction)swValueChanged:(id)sender{
-//    if ([(UISwitch *)sender isOn]) {
-//        [[UDPNetwork sharedUDPNetwork] startReceiveNetworkData];
-//    }else{
-//        [[UDPNetwork sharedUDPNetwork] disConnect];
-//    }
+    if ([(UISwitch *)sender isOn]) {
+        [[UDPNetwork sharedUDPNetwork] startReceiveNetworkData];
+    }else{
+        [[UDPNetwork sharedUDPNetwork] disConnect];
+    }
 }
 
 #pragma mark - 按钮事件
@@ -175,7 +175,9 @@
 //    [sharedUDPNetwork sendDataToRCU:data];
     
 //    测试数据中心
-//    NSLog(@"%@", [DataCenter sharedDataCenter].localInfoDic);
+    NSLog(@"%@", [DataCenter sharedDataCenter].userInfoDic);
+    NSLog(@"%@", [DataCenter sharedDataCenter].rcuInfoDic);
+    NSLog(@"%@", [DataCenter sharedDataCenter].roomInfoDic);
     
 }
 

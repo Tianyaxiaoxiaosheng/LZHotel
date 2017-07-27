@@ -128,7 +128,18 @@
     //添加总控界面
     [self.view addSubview:self.overAllControlView];
     
+    //注册通知，死亡时移除
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(controlInformationProcessing:) name:@"Lights" object:nil];
+    
 }
+
+//控制器死亡时移除观察者，
+- (void)dealloc{
+    //tabbar 切换是不会死亡的
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+}
+
 
 
 #pragma mark -- NGViewDelegate
@@ -146,6 +157,56 @@
 //    NSLog(@"\ncurrentRoomView tag = %ld", self.currentRoomView.tag);
     
     [(RoomLightsView *)self.currentRoomView allLightsSwitch:(tag == 1)];
+}
+
+#pragma mark -- 解析信息
+- (void)controlInformationProcessing:(NSNotification *)notification{
+    
+    NSString *string = [notification object];
+    NSLog(@"Lights Notification : %@", string);
+    
+//    //1、截取字符串,获取灯光控制类型
+//    NSString *typeStr = [string substringToIndex:2];
+//    //    NSString *orderStr = [string substringFromIndex:4];
+//    
+//    if ([typeStr isEqualToString:@"LC"]) {
+//        NSLog(@"Lights Notification : %@", string);
+//        NSString *statusStr = [string substringWithRange:NSMakeRange(2, 1)];
+//        BOOL isOpen = ([statusStr integerValue] == 1)? YES:NO;
+//        
+//        if (isOpen) {
+//            NSLog(@"****open*****");
+//        }
+//        
+//        NSString *orderStr = [string substringFromIndex:4];
+//        //NSLog(@"orderStr: %@", orderStr);
+//        NSArray *strArray = [orderStr componentsSeparatedByString:@","];
+//        //NSLog(@"strArray count: %d", strArray.count);
+//        
+    
+//        for (NSString *lightId in [self.lightsDic allKeys]) {
+//            
+//            UIButton *button = [self.lightsDic objectForKey:lightId];
+//            
+//            //            if ([strArray containsObject:lightId]) {
+//            //                NSLog(@"lightId = %@",lightId);
+//            //                button.selected = isOpen;
+//            //            }else {
+//            //                button.selected = !isOpen;
+//            //            }
+//            //            button.selected = [strArray containsObject:lightId] ? isOpen : (!isOpen);
+//            
+//            //特殊的255
+//            if ([strArray containsObject:@"255"]) {
+//                button.selected = isOpen;
+//            }else {
+//                button.selected = [strArray containsObject:lightId] ? isOpen : (!isOpen);
+//            }
+//        }
+//
+//    }else if ([typeStr isEqualToString:@"DM"]) {
+//    }
+    
 }
 
 @end

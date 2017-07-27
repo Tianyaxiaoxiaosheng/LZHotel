@@ -142,18 +142,18 @@ static DataCenter *sharedDataCenter = nil;
 - (NSDictionary *)initializeTheDataCenterDic{
     NSDictionary *mutableDic = [[NSDictionary alloc] init];
     
-    NSDictionary *roomInfoDic = @{@"roomNum":@"1002"
-                                  , @"roomId":@"1"
-                                  , @"roomType":@"4"};
+    NSDictionary *roomInfoDic = @{@"roomNum":@"0000"
+                                  , @"roomId":@"0"
+                                  , @"roomType":@"0"};
     NSDictionary *userInfoDic = @{@"userName":@"0000"
-                                  , @"userPwd":@"123456"};
-    NSDictionary *localInfoDic = @{@"localIp":@"192.168.0.1"
+                                  , @"userPwd":@"000000"};
+    NSDictionary *localInfoDic = @{@"localIp":@"0.0.0.0"
                                    , @"localPort":@"12345"};
-    NSDictionary *serverInfoDic = @{@"serverIp":@"172.144.1.120"
+    NSDictionary *serverInfoDic = @{@"serverIp":@"172.144.1.125"
                                     , @"serverPort":@"8080"
                                     , @"serverName":@"hotelWeb"};
-    NSDictionary *rcuInfoDic = @{@"rcuIp":@"172.144.1.120"
-                                 , @"rcuPort":@"60000"};
+    NSDictionary *rcuInfoDic = @{@"rcuIp":@"0.0.0.0"
+                                 , @"rcuPort":@"0"};
     
     
     mutableDic = @{@"roomInfo":roomInfoDic

@@ -26,12 +26,27 @@
  @return Uses in string of character type URL which registers
  */
 + (NSString *)registerStringUrlWithDictionary:(NSDictionary *)infoDic{
+    
+    //url字符串所需要的参数
     NSString *parameterStr = [[NSString alloc] initWithFormat:@"?localIp=%@&localPort=%@&userId=%@&userPwd=%@", [infoDic objectForKey:@"localIp"]
                               , [infoDic objectForKey:@"localPort"]
                               , [infoDic objectForKey:@"userId"]
                               , [infoDic objectForKey:@"userPwd"]
                               ];
-    NSString *strUrl = [NSString stringWithFormat:@"http://172.144.1.120:8080/hotelWeb/Register%@",parameterStr];
+    
+    //获取服务器信息
+    DataCenter *sharedDataCenter = [DataCenter sharedDataCenter];
+    NSDictionary *serverInfoDic = [sharedDataCenter serverInfoDic];
+    
+    NSString *serverStr = [[NSString alloc] initWithFormat:@"http://%@:%@/%@"
+                           , [serverInfoDic objectForKey:@"serverIp"]
+                           , [serverInfoDic objectForKey:@"serverPort"]
+                           , [serverInfoDic objectForKey:@"serverName"]
+                           ];
+    
+    //组合，返回
+    NSString *strUrl = [NSString stringWithFormat:@"%@/Register%@", serverStr, parameterStr];
+    
     return strUrl;
 }
 
@@ -42,11 +57,13 @@
  @return Uses in extracting status messages string of character type URL
  */
 + (NSString *)getOriginalStateStringUrlWithDictionary:(NSDictionary *)infoDic{
+    
     NSString *parameterStr = [[NSString alloc] initWithFormat:@"?roomId=%@&deviceId=%@"
                               , [infoDic objectForKey:@"roomId"]
                               , [infoDic objectForKey:@"deviceId"]
                               ];
-    NSString *strUrl = [NSString stringWithFormat:@"http://172.144.1.120:8080/hotelWeb/DeviceState%@",parameterStr];
+    
+    NSString *strUrl = [NSString stringWithFormat:@"http://172.144.1.125:8080/hotelWeb/DeviceState%@",parameterStr];
     return strUrl;
 }
 

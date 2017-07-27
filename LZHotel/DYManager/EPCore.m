@@ -43,33 +43,41 @@
         if (isSeccuss) {
             [SVProgressHUD showSuccessWithStatus:@"Succeed !"];
             NSLog(@"responseDic: %@",responseDic);
+            
             //请求成功后，对返回的数据处理
-            [self dealWithInfomationResponse:responseDic andInfo:infoDic];
+            NSDictionary *userInfoDic = @{@"userName":userId
+                                          , @"userPwd":userPwd};
+            [self dealWithInfomationResponse:responseDic andUserInfo:userInfoDic];
         }else {
             [SVProgressHUD showErrorWithStatus:@"Faled !"];
         }
     }];
 }
 
-+ (void) dealWithInfomationResponse:(NSDictionary *)responseDic andInfo:(NSDictionary *)infoDic{
++ (void) dealWithInfomationResponse:(NSDictionary *)responseDic andUserInfo:(NSDictionary *)userInfoDic{
     //测试
     NSLog(@"处理注册返回的数据");
     
-//    BOOL isSuccess = [[responseDic objectForKey:@"isSuccess"] boolValue];
-//    if (isSuccess) {
-//        //更新本地网络信息
-//        NetworkInfo *sharedNetworkInfo = [NetworkInfo sharedNetworkInfo];
-//        [sharedNetworkInfo.rcuInfoDic setDictionary:[responseDic objectForKey:@"rcuInfo"]];
-//        sharedNetworkInfo.roomId = [responseDic objectForKey:@"roomId"];
-//        [sharedNetworkInfo.userInfoDic setObject:[infoDic objectForKey:@"userId"] forKey:@"userId"];
-//        [sharedNetworkInfo.userInfoDic setObject:[infoDic objectForKey:@"userPwd"] forKey:@"userPwd"];
-//        
-//        //写入本地缓存
-//        [sharedNetworkInfo networkInfoDictionaryWriteToLocatedFile];
-//        [SVProgressHUD showSuccessWithStatus:@"Succeed, please restart!"];
-//    } else{
-//        [SVProgressHUD showErrorWithStatus:[responseDic objectForKey:@"errorInfo"]];
-//    }
+    BOOL isSuccess = [[responseDic objectForKey:@"isSuccess"] boolValue];
+    if (isSuccess) {
+        
+        //更新本地信息
+        DataCenter *sharedDataCenter = [DataCenter sharedDataCenter];
+        
+        sharedDataCenter.rcuInfoDic = [responseDic objectForKey:@"rcuInfo"];
+        sharedDataCenter.roomInfoDic = [responseDic objectForKey:@"roomInfo"];
+        sharedDataCenter.userInfoDic = userInfoDic;
+        
+        //写入本地缓存
+        if ([sharedDataCenter toWriteTheFile]) {
+            [SVProgressHUD showSuccessWithStatus:@"Succeed, please restart!"];
+        }else {
+            [SVProgressHUD showErrorWithStatus:@"Local write error!"];
+        }
+        
+    } else{
+        [SVProgressHUD showErrorWithStatus:[responseDic objectForKey:@"errorInfo"]];
+    }
 }
 
 #pragma mark - rcu信息解析
@@ -84,7 +92,7 @@
     }else{
         tempStr = strRcuInfo;
     }
-    NSLog(@"Start Analysis ----------");
+    NSLog(@"\nStart Analysis ----------");
     
     NSUInteger strLength;
     strLength = strRcuInfo.length;
@@ -92,7 +100,7 @@
     
     //1.删除前导字符
     strRcuInfo = [strRcuInfo substringWithRange:NSMakeRange(1, strLength-3)];
-    NSLog(@"strRcuInfo: %@", strRcuInfo);
+    NSLog(@"\nThe first processing: %@", strRcuInfo);
     
     //2.判断指令类型
     if ([strRcuInfo hasPrefix:@"RE"]) {
@@ -108,7 +116,7 @@
         [self frOrderAnalysis:[strRcuInfo substringFromIndex:10]];
         
     }else {
-        NSLog(@"Unknown order type");
+        NSLog(@"\nUnknown order type");
         
     }
     

@@ -152,7 +152,6 @@ static UDPNetwork *sharedUDPNetwork = nil;
     //对接收到的信息处理，如果处理时间过长，会影响接收，可采用GCD进行多任务异步处理
     
     //接收到的信息交由处理中心处理
-    // [EPCore receiveDataProcessingWithData:data];
     [EPCore rcuInfoAnalysis:data];
     
     

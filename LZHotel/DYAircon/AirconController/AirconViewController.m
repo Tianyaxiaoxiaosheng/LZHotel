@@ -66,7 +66,17 @@
     [self.view addSubview:self.airconNGView];
     [self.view sendSubviewToBack:self.airconNGView];
     
+    //注册通知，死亡时移除
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(controlInformationProcessing:) name:@"Aircon" object:nil];
 }
+
+//控制器死亡时移除观察者，
+- (void)dealloc{
+    //tabbar 切换是不会死亡的
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+}
+
 
 #pragma mark -- NGViewDelegate
 - (void)NGView:(NGView *)NGView didSelectedFrom:(NSInteger)from to:(NSInteger)to{
@@ -89,4 +99,39 @@
     self.currentAirconView.aircon = aircon;
     
 }
+
+#pragma mark - 处理接收到的通知
+- (void)controlInformationProcessing:(NSNotification *)notification{
+    
+    NSString *string = [notification object];
+    NSLog(@"Aircon Notification : %@", string);
+    
+//    //先判断下字符串合法性
+//    if (string.length != 15) {
+//        NSLog(@"AC order erorr !");
+//        return;
+//    }
+//    
+//    
+//    //截取字符串
+//    NSString *typeStr = [string substringToIndex:3];
+//    NSString *orderStr = [string substringFromIndex:4];
+//    
+//    //命令字符串解析成字典
+//    NSDictionary *orderDic = @{@"aTemp":[orderStr substringWithRange:NSMakeRange(0, 2)]
+//                               ,@"sTemp":[orderStr substringWithRange:NSMakeRange(3, 2)]
+//                               ,@"modeType":[orderStr substringWithRange:NSMakeRange(6, 2)]
+//                               ,@"windType":[orderStr substringWithRange:NSMakeRange(9, 2)]
+//                               };
+//    
+    
+    //NSLog(@"%@",typeStr);
+//    //判断界面，并设置
+//    if ([typeStr isEqualToString:@"AC1"]) {
+//        [self.PLAirconKeyboardView setViewInfo:orderDic];
+//    }else if ([typeStr isEqualToString:@"AC2"]) {
+//        [self.BRAirconKeyboardView setViewInfo:orderDic];
+//    }
+}
+
 @end

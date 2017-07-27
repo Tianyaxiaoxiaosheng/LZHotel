@@ -32,8 +32,22 @@
     
     //添加键盘区
     [self.view addSubview:self.serverKeyboardView];
+    
+    //注册通知，死亡时移除
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(controlInformationProcessing:) name:@"Server" object:nil];
 
 }
 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark -- 解析信息
+- (void)controlInformationProcessing:(NSNotification *)notification{
+    
+    NSString *string = [notification object];
+    NSLog(@"Server Notification : %@", string);
+    
+}
 
 @end
