@@ -15,7 +15,8 @@
 
 -(instancetype)initWithFrame:(CGRect)frame
 {
-    if ([super initWithFrame:frame]) {
+    self = [super initWithFrame:frame];
+    if (self) {
         self = [[[NSBundle mainBundle] loadNibNamed:@"ServerKeyboardView" owner:nil options:nil] lastObject];
         self.frame = frame;
         self.backgroundColor = [UIColor colorWithRed:192/255 green:192/255 blue:192/255 alpha:0.2];

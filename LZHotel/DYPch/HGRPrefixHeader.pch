@@ -63,6 +63,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#import<CommonCrypto/CommonDigest.h>
+
 
 
 #pragma mark -View Info

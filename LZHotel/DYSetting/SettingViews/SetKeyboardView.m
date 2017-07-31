@@ -20,18 +20,22 @@
 
 -(instancetype)initWithFrame:(CGRect)frame
 {
-    if ([super initWithFrame:frame]) {
+    self = [super initWithFrame:frame];
+    if (self) {
         self = [[[NSBundle mainBundle] loadNibNamed:@"SetKeyboardView" owner:nil options:nil] lastObject];
         self.frame = frame;
         self.backgroundColor = [UIColor colorWithRed:192/255 green:192/255 blue:192/255 alpha:0.2];
         self.layer.cornerRadius = 18;
         self.layer.masksToBounds = YES;
         
+//        NSString *keyStr = @"6位字符";
+//        NSString *roomNumStr = @"4位数字";
+        
         //初始化key文本框显示
         self.keyTextField.clearButtonMode = UITextFieldViewModeAlways;
         self.keyTextField.clearsOnBeginEditing = YES;
         self.keyTextField.keyboardType = UIKeyboardTypeDecimalPad;
-        self.keyTextField.placeholder = @"6位字符";
+        self.keyTextField.placeholder = NSLocalizedString(@"6位字符", @"6位字符");
         self.keyTextField.delegate = self;
         self.keyTextField.secureTextEntry = YES;
         
@@ -40,7 +44,7 @@
         self.roomNumTextField.clearButtonMode = UITextFieldViewModeAlways;
         self.roomNumTextField.clearsOnBeginEditing = YES;
         self.roomNumTextField.keyboardType = UIKeyboardTypeDecimalPad; //数字键盘 有数字和小数点
-        self.roomNumTextField.placeholder = @"4位数字"; //水印
+        self.roomNumTextField.placeholder = NSLocalizedString(@"6位字符", @"6位字符"); //水印
         self.roomNumTextField.delegate = self;
         
         //设置开关的初始值
@@ -175,10 +179,13 @@
 //    [sharedUDPNetwork sendDataToRCU:data];
     
 //    测试数据中心
-    NSLog(@"%@", [DataCenter sharedDataCenter].userInfoDic);
-    NSLog(@"%@", [DataCenter sharedDataCenter].rcuInfoDic);
-    NSLog(@"%@", [DataCenter sharedDataCenter].roomInfoDic);
+//    NSLog(@"%@", [DataCenter sharedDataCenter].userInfoDic);
+//    NSLog(@"%@", [DataCenter sharedDataCenter].rcuInfoDic);
+//    NSLog(@"%@", [DataCenter sharedDataCenter].roomInfoDic);
     
+    //测试MD5
+  
+     [EPCore sendQSOrderToRcu];
 }
 
 #pragma mark - 文本处理

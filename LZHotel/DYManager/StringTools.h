@@ -39,4 +39,5 @@
  */
 + (BOOL)isFourBitOfRoomNumbersWithString:(NSString *)string;
 
+
 @end

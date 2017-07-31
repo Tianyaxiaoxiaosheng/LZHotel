@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSArray *windTypeImages;
 
 @property (nonatomic, assign) NSInteger setTemp;
+//@property (nonatomic, assign) Aircon *tempAircon;
 
 @end
 
@@ -41,7 +42,8 @@
 
 -(instancetype)initWithFrame:(CGRect)frame
 {
-    if ([super initWithFrame:frame]) {
+    self = [super initWithFrame:frame];
+    if (self) {
         
         //设置界面
         self = [[[NSBundle mainBundle] loadNibNamed:@"AirconKeyboardView" owner:nil options:nil] lastObject];
@@ -53,8 +55,10 @@
             if (button) {
                 [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
             }
+            
         }
-        
+       
+//        self.aircon = [[Aircon alloc] init];
     }
     return self;
 }
@@ -63,11 +67,9 @@
     switch (button.tag) {
         case 1:
             self.setTemp++;
-            self.aircon.setTemp++;
             break;
         case 2:
             self.setTemp--;
-            self.aircon.setTemp++;
             break;
         case 3:
         case 4:
@@ -89,18 +91,23 @@
             break;
     }
     
-    NSString *OrderStr = [NSString stringWithFormat:@"AC%ld,%ld,%ld,%ld,%ld"
+    NSString *orderStr = [[NSString alloc] initWithFormat:@"AC%ld,%ld,%ld,%ld,%ld|"
                           , self.airconId
                           , self.aircon.actualTemp
                           , self.aircon.setTemp
                           , self.aircon.modelType
                           , self.aircon.windType
                           ];
-    [EPCore sendECOrderToRcu:OrderStr];
+    
+//    test
+//    NSLog(@"%@", orderStr);
+    [EPCore sendECOrderToRcu:orderStr];
+    
 }
 
 - (void)setSetTemp:(NSInteger)setTemp{
     _setTemp = setTemp;
+    self.aircon.setTemp = setTemp;
     self.temperatureLabel.text = [NSString stringWithFormat:@"s%ld", setTemp];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.temperatureLabel.text = [NSString stringWithFormat:@"%ld", self.aircon.actualTemp];

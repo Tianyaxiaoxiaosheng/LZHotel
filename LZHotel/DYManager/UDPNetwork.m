@@ -138,8 +138,11 @@ static UDPNetwork *sharedUDPNetwork = nil;
 //    int rcuPort = [[rcuInfoDic objectForKey:@"rcuPort"] intValue];
     
     //test
-    NSString *rcuIp = @"172.144.8.51";
-    int rcuPort = 9990;
+    NSString *rcuIp = @"172.144.1.125";
+    int rcuPort = 60000;
+    
+//    NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//    NSLog(@"send: %@",string);
     
     if ([self.socket sendData:data toHost:rcuIp port:rcuPort withTimeout:-1 tag:0]) {
         return true;
@@ -152,7 +155,7 @@ static UDPNetwork *sharedUDPNetwork = nil;
 - (BOOL)onUdpSocket:(AsyncUdpSocket *)sock didReceiveData:(NSData *)data withTag:(long)tag fromHost:(NSString *)host port:(UInt16)port {
     static int i = 0;
     NSString *recStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"\n(%d)host----->%@ :%hu\ndata----->%@",(i++), host, port, recStr);
+    NSLog(@"\n(%d)host----->%@ :%hu\ndata(length:%ld)----->%@",(i++), host, port,recStr.length, recStr);
     //对接收到的信息处理，如果处理时间过长，会影响接收，可采用GCD进行多任务异步处理
     
     //接收到的信息交由处理中心处理
@@ -167,12 +170,12 @@ static UDPNetwork *sharedUDPNetwork = nil;
 
 
 -(void)onUdpSocket:(AsyncUdpSocket *)sock didNotReceiveDataWithTag:(long)tag dueToError:(NSError *)error{
-    
+
     NSLog(@"Message not received for error: %@", error);
 }
 
 -(void)onUdpSocket:(AsyncUdpSocket *)sock didNotSendDataWithTag:(long)tag dueToError:(NSError *)error{
-    
+
     NSLog(@"Message not send for error: %@",error);
 }
 

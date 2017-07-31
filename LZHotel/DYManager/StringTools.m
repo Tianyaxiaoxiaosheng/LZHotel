@@ -8,6 +8,7 @@
 
 #import "StringTools.h"
 
+
 @implementation StringTools
 //static StringTools *sharedStringTools;
 //

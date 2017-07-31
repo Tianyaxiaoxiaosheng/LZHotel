@@ -140,7 +140,7 @@ static DataCenter *sharedDataCenter = nil;
  @return DataCenterDic
  */
 - (NSDictionary *)initializeTheDataCenterDic{
-    NSDictionary *mutableDic = [[NSDictionary alloc] init];
+//    NSDictionary *mutableDic = [[NSDictionary alloc] init];
     
     NSDictionary *roomInfoDic = @{@"roomNum":@"0000"
                                   , @"roomId":@"0"
@@ -156,7 +156,7 @@ static DataCenter *sharedDataCenter = nil;
                                  , @"rcuPort":@"0"};
     
     
-    mutableDic = @{@"roomInfo":roomInfoDic
+    NSDictionary *mutableDic = @{@"roomInfo":roomInfoDic
                    , @"userInfo":userInfoDic
                    , @"localInfo":localInfoDic
                    , @"serverInfo":serverInfoDic

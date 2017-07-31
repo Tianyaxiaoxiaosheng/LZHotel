@@ -204,17 +204,43 @@
 //                          ];
     
     //test
+//    string = [string substringToIndex:string.length-1];
         NSString *orderStr = [NSString stringWithFormat:@"EC|RN%@|PW%@|%@|"
                               , @"0851"
                               , @"0851"
                               , string
                               ];
+
+    //AC指令比较特殊，在快速操作编码时会导致崩溃，处理前多加了|字符，内存拷贝时得删除
+    const char *str = [orderStr UTF8String];
     
-    if ([self orderPackageAndSend:orderStr]) {
-        return true;
+    char pried = 0x02;
+    char end = 0x03;
+    char check = 0x01;
+    char *buff = (char *) malloc(3 + strlen(str));
+    
+    //使用内存拷贝处理，依次进行组合，注意控制长度，防止字符串最后的\n
+    strncpy(buff, &pried,1);
+    
+    //根据传过来的字符串类型，去除多加的|
+    if ([string hasPrefix:@"AC"]) {
+        strncat(buff, str, strlen(str)-1);
+    }else {
+        strncat(buff, str, strlen(str));
     }
     
+    strncat(buff, &end,1);
+    strncat(buff, &check,1);
+    
+    //    转换data，发送，申请的内存需要释放，否则会内存泄漏，操作频繁引起程序崩溃
+    NSData *data = [NSData dataWithBytes:buff length:strlen(buff)];
+    free(buff);
+    
+    if ([[UDPNetwork sharedUDPNetwork] sendDataToRCU:data]) {
+        return true;
+    }
     return false;
+   
     
 }
 
@@ -229,6 +255,22 @@
     //                          ];
     
     //test
+//    NSString *str1 = @"QS|RN0851|PW";
+//    const char *cStr1 = [str1 UTF8String];
+    
+    //md5
+//    NSString *str = @"0851";
+//     const char *cStr = [str UTF8String];
+//    unsigned char result[CC_MD5_DIGEST_LENGTH];
+//    CC_MD5( cStr, strlen(cStr), result);
+//    
+//    NSMutableString *string = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+//    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++){
+//        [string appendFormat:@"%02x", result[i]];
+//    }
+//    NSLog(@"string: %@",string);
+    
+    //
     NSString *orderStr = [NSString stringWithFormat:@"QS|RN%@|PW%@|"
                           , @"0851"
                           , @"0851"
@@ -239,7 +281,7 @@
     }
     
     return false;
-    
+  
 }
 
 + (BOOL)sendQIOrderToRcu{
@@ -259,9 +301,13 @@
     
     //    ARC机制下操作内存需要申请
     //    char *str = "EC|RN0851|PW0851|LC8,0:9,0:10,0|";
-
+ 
     const char *str = [orderStr UTF8String];
-    //    NSLog(@"str: %s", str);
+    
+    NSLog(@"order: %@", orderStr);
+    
+    
+    NSLog(@"str: %s", str);
     
     //附加的字符，注意要使用十六进制，防止因为ASCII转换崩溃
     //前导字符
@@ -280,18 +326,19 @@
     strncat(buff, &end,1);
     strncat(buff, &check,1);
     
-    //    NSLog(@"length:%ld",strlen(&pried));//输出为4
-    //
-    //    for (int i = 0; i < strlen(buff); i++) {
-    //        printf("-%x", buff[i]);
-    //    }
+//    NSLog(@"length:%ld",strlen(&pried));//输出为4
+
+//    for (int i = 0; i < strlen(buff); i++) {
+//        printf("-%x", buff[i]);
+//    }
     
-    //转换data，发送
-    NSData *data = [NSData dataWithBytes:buff length:strlen(buff)];
+//    转换data，发送，申请的内存需要释放，否则会内存泄漏，操作频繁引起程序崩溃
+    NSData *data = [NSData dataWithBytes:buff length:strlen(buff)];    
+    free(buff);
+    
     if ([[UDPNetwork sharedUDPNetwork] sendDataToRCU:data]) {
         return true;
     }
-    
     return false;
     
 }
